@@ -1,0 +1,3 @@
+variable k_bend equal ${kBT}*(450.0/(${sigma_mono_mono})) #  [Kcal/mol]
+variable k_twist equal ${kBT}*(850.0/(2*${sigma_mono_mono})) # [Kcal/mol]
+variable k_align equal 2*${k_twist} # [Kcal/mol]

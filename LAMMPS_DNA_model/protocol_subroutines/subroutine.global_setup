@@ -1,0 +1,15 @@
+#################################
+# prepare LAMMPS for simulation #
+#################################
+
+# OpenMP package
+package omp ${nProc} neigh yes
+
+# real units
+units real
+# atom style
+atom_style hybrid angle ellipsoid
+# periodic boundaries
+boundary f f f
+# atom map
+atom_modify id yes map hash

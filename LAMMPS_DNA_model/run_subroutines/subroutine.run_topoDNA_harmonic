@@ -1,0 +1,11 @@
+# include file with description of DNA polymer model with harmonic bonds
+include ${DNA_model_dir}/potentials/lmp.twistable_DNA_model_harmonic_omp
+
+# include file with neighbor setup
+include ${DNA_model_dir}/protocol_subroutines/subroutine.neighbor_setup
+
+# include file with soft (topoisomerase) pair potentials
+include ${DNA_model_dir}/potentials/lmp.DNA_pair_topo_omp
+
+# include file with brownian/asphere/omp fixes
+include ${DNA_model_dir}/run_subroutines/subroutine.BD_fixes

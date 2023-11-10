@@ -1,0 +1,13 @@
+######################################
+# fix commands for Brownian dynamics #
+######################################
+
+# BD fix for DNA
+fix dnaBD DNA brownian/asphere/omp ${T} ${rng_seed} &
+gamma_r_eigen ${gamma_r_mono} ${gamma_r_mono} ${gamma_r_mono} &
+gamma_t_eigen ${gamma_t_mono} ${gamma_t_mono} ${gamma_t_mono}
+
+# BD fix for ribosomes
+fix ribosBD ribos brownian/asphere/omp ${T} ${rng_seed} &
+gamma_r_eigen ${gamma_r_ribo} ${gamma_r_ribo} ${gamma_r_ribo} &
+gamma_t_eigen ${gamma_t_ribo} ${gamma_t_ribo} ${gamma_t_ribo}

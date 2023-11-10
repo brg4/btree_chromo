@@ -1,0 +1,18 @@
+# create springs to hold ribosomes
+include ${DNA_model_dir}/potentials/lmp.ribo_springs
+
+# include file with description of DNA polymer model with FENE bonds
+include ${DNA_model_dir}/potentials/lmp.twistable_DNA_model_FENE_omp
+
+# include file with neighbor setup
+include ${DNA_model_dir}/protocol_subroutines/subroutine.neighbor_setup
+
+# include file with soft pair potentials
+include ${DNA_model_dir}/potentials/lmp.DNA_pair_soft_omp
+
+# run the minimization
+min_style cg
+minimize 1.0e-5 1.0e-7 40000 400000
+
+# release ribosomes from springs following minimization
+unfix ribosSpring

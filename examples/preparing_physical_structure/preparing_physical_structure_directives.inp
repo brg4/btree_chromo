@@ -1,0 +1,96 @@
+######################
+######  README  ######
+######################
+
+# PURPOSE: prepare a structure of a replicated chromosome
+
+# NOTE 1: comment the ``terminate'' at the top to execute all of the commands
+
+# NOTE 2: change all directories in this file from ``/home/ben/Workspace/'' to the local repository location
+
+######################
+######################
+######################
+
+
+terminate
+
+
+#set the prng seed
+btree_prng_seed:10
+
+
+#create a new circular chromosome with 5000 monomers
+new_chromo:5000
+
+
+#load the BD lengths
+load_BD_lengths:/home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/BD_lengths.txt
+
+
+#load the monomer coordinates and orientations
+load_mono_coords:/home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/x_mono_5000mono_50ribo_bdry900A.bin,row
+load_mono_quats:/home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/q_mono_5000mono_50ribo_bdry900A.bin,row
+
+
+#load the ribosome coordinates and orientations
+load_ribo_coords:/home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/x_ribo_5000mono_50ribo_bdry900A.bin,row
+load_ribo_quats:/home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/q_ribo_5000mono_50ribo_bdry900A.bin,row
+
+
+#load the boundary coordinates
+load_bdry_coords:/home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/x_bdry_5000mono_50ribo_bdry900A.bin,row
+
+
+#alternatively, generate a spherical boundary with 900A radius centered at the origin
+spherical_bdry:900.0,0.0,0.0,0.0
+
+
+#write a LAMMPS data file with the current system for subsequent simulations
+write_LAMMPS_data:/home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/data.unreplicated
+
+
+#write a xyz file of the monomer coordinates for quick visualization
+write_mono_xyz:/home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/mono_unreplicated.xyz
+
+
+#set the initial state of the mapper
+set_initial_state
+
+
+#replicate the system
+transform:m_cw500_ccw500
+
+
+#set the final state of the mapper
+set_final_state
+
+
+#place new monomers based on the difference in the two states
+map_replication
+
+
+#write the now replicate state of the chromosome
+output_state:/home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/replicated_chromo.dat
+
+
+#write a LAMMPS data file with the current system for subsequent simulations
+write_LAMMPS_data:/home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/data.replicated
+
+
+#write a xyz file of the monomer coordinates for quick visualization
+write_mono_xyz:/home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/mono_replicated.xyz
+
+
+#write the monomer coordinates and orientations
+write_mono_coords:/home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/x_mono_replicated.bin,row
+write_mono_quats:/home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/q_mono_replicated.bin,row
+
+
+#write the ribosome coordinates and orientations
+write_ribo_coords:/home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/x_ribo_replicated.bin,row
+write_ribo_quats:/home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/q_ribo_replicated.bin,row
+
+
+#write the boundary coordinates
+write_bdry_coords:/home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/x_bdry_replicated.bin,row

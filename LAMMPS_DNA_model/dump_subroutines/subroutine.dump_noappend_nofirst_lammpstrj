@@ -1,0 +1,4 @@
+# set custom dump style
+dump            d_lammpstrj all custom ${D_freq} ${output_file}.lammpstrj id type x y z c_quat[*] c_id_track c_type_track
+dump_modify     d_lammpstrj append no first no delay ${D_delay}
+#dump_modify     dumplammpstrj append no first no skip v_skip_condition

@@ -1,0 +1,31 @@
+# variables describing energetic parameters
+variable l_equil equal 2.0*${r_mono}-6.0
+#variable k_stretch equal 2000*${kBT}/(${sigma_mono_mono}^2) # [Kcal/(mol*A^2)]
+variable k_stretch equal 1000*${kBT}/(${sigma_mono_mono}^2) # [Kcal/(mol*A^2)]
+
+include ${DNA_model_dir}/potentials/lmp.DNA_bend_twist_align_params
+
+print """
+ -----------------------------------------------------
+ ---[ Twistable DNA (stiff), Energetic Parameters ]---
+ -----------------------------------------------------
+  kBT = ${kBT} [Kcal/mol]
+  k_stretch = ${k_stretch} [Kcal/(mol*A^2)]
+  k_bend = ${k_bend} [Kcal/mol]
+  k_twist = ${k_twist} [Kcal/mol]
+  k_align = ${k_align} [Kcal/mol]
+"""
+
+# bond potentials
+bond_style harmonic/omp
+bond_coeff 1 ${k_stretch} ${l_equil}
+include ${DNA_model_dir}/potentials/lmp.loop_bond
+
+# angle potentials
+angle_style   hybrid polytorsion/omp cosine/omp harmonic/omp
+angle_coeff   1 cosine/omp ${k_bend} # primary polymer chain angles
+angle_coeff   2 polytorsion/omp ${k_align} ${k_twist} # primary polymer chain twist
+angle_coeff   3 harmonic/omp ${k_bend} 120.0 # replication fork angles
+angle_coeff   4 polytorsion/omp ${k_align} ${k_twist} # replication fork twist
+
+special_bonds angle yes

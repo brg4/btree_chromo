@@ -1,0 +1,5 @@
+# computes for MSD
+include ${DNA_model_dir}/compute_subroutines/subroutine.compute_MSD
+
+# printing MSD
+fix extra all print ${D_freq} """{"timestep": $(step), "dnaMSD": $(c_dnaMSD[4]), "ribosMSD": $(c_ribosMSD[4]), "orisMSD": $(c_orisMSD[4]), "tersMSD": $(c_tersMSD[4]), "forksMSD": $(c_forksMSD[4])}""" title "" file ${output_file}_MSD.json screen no

@@ -1,0 +1,34 @@
+# for home computer
+
+cmake -B build_python/ -S lammps/cmake/ -DBUILD_MPI=yes -DBUILD_OMP=yes -DLAMMPS_MACHINE=ubuntu_AMD -DBUILD_SHARED_LIBS=yes -DCMAKE_INSTALL_PREFIX=/usr/local/Suites/LAMMPS/ubuntu_AMD -DPKG_GPU=yes -DPKG_KOKKOS=on -DMPIEXEC_EXECUTABLE=/usr/local/Tools/OpenMPI/4.1.1/bin/mpicxx -DKokkos_ARCH_HOSTARCH=ZEN3 -DKokkos_ENABLE_OMP=yes -DKokkos_ARCH_GPUARCH=AMPERE86 -DKokkos_ENABLE_CUDA=yes -DGPU_API=cuda -DGPU_ARCH=sm_86 -DCMAKE_CUDA_ARCHITECTURES=86 -DPKG_OPENMP=yes -DPKG_MOLECULE=yes -DPKG_ASPHERE=yes -DPKG_PYTHON=yes -DPKG_BROWNIAN=yes -DPKG_RIGID=yes -DPKG_CG-DNA=yes -DPYTHON_EXECUTABLE=/home/ben/anaconda3/envs/lammps/bin/python3
+
+cmake -B build_GPU_Kokkos_python/ -S lammps/cmake/ -DBUILD_MPI=yes -DBUILD_OMP=yes -DLAMMPS_MACHINE=GPU_Kokkos_python -DBUILD_SHARED_LIBS=yes -DCMAKE_INSTALL_PREFIX=/usr/local/Suites/LAMMPS/GPU_Kokkos_python -DPKG_GPU=yes -DPKG_KOKKOS=on -DMPIEXEC_EXECUTABLE=/usr/local/Tools/OpenMPI/4.1.1/bin/mpicxx -DKokkos_ARCH_HOSTARCH=ZEN3 -DKokkos_ENABLE_OMP=yes -DKokkos_ARCH_GPUARCH=AMPERE86 -DKokkos_ENABLE_CUDA=yes -DGPU_API=cuda -DGPU_ARCH=sm_86 -DCMAKE_CUDA_ARCHITECTURES=86 -DPKG_OPENMP=yes -DPKG_MOLECULE=yes -DPKG_ASPHERE=yes -DPKG_PYTHON=yes -DPKG_BROWNIAN=yes -DPKG_RIGID=yes -DPKG_CG-DNA=yes -DPYTHON_EXECUTABLE=/home/ben/anaconda3/envs/lammps/bin/python3
+
+cmake -B build_GPU_Kokkos/ -S lammps/cmake/ -DBUILD_MPI=yes -DBUILD_OMP=yes -DLAMMPS_MACHINE=GPU_Kokkos -DBUILD_SHARED_LIBS=yes -DCMAKE_INSTALL_PREFIX=/usr/local/Suites/LAMMPS/GPU_Kokkos -DPKG_GPU=yes -DPKG_KOKKOS=on -DMPIEXEC_EXECUTABLE=/usr/local/Tools/OpenMPI/4.1.1/bin/mpicxx -DKokkos_ARCH_HOSTARCH=ZEN3 -DKokkos_ENABLE_OMP=yes -DKokkos_ARCH_GPUARCH=AMPERE86 -DKokkos_ENABLE_CUDA=yes -DGPU_API=cuda -DGPU_ARCH=sm_86 -DCMAKE_CUDA_ARCHITECTURES=86 -DPKG_OPENMP=yes -DPKG_MOLECULE=yes -DPKG_ASPHERE=yes -DPKG_BROWNIAN=yes -DPKG_RIGID=yes -DPKG_CG-DNA=yes
+
+# for workstation
+
+cmake -B build_GPU_Kokkos/ -S lammps/cmake/ -DBUILD_MPI=yes -DBUILD_OMP=yes -DLAMMPS_MACHINE=GPU_Kokkos -DBUILD_SHARED_LIBS=yes -DCMAKE_INSTALL_PREFIX=/usr/local/Software/LAMMPS/GPU_Kokkos -DPKG_GPU=yes -DPKG_KOKKOS=on -DMPIEXEC_EXECUTABLE=/usr/local/Libraries/OpenMPI/4.1.1/bin/mpicxx -DKokkos_ARCH_HOSTARCH=ZEN3 -DKokkos_ENABLE_OMP=yes -DKokkos_ARCH_GPUARCH=AMPERE86 -DKokkos_ENABLE_CUDA=yes -DGPU_API=cuda -DGPU_ARCH=sm_86 -DCMAKE_CUDA_ARCHITECTURES=86 -DPKG_OPENMP=yes -DPKG_MOLECULE=yes -DPKG_ASPHERE=yes -DPKG_BROWNIAN=yes -DPKG_RIGID=yes -DPKG_CG-DNA=yes
+
+# corrected for Kokkos
+
+cmake -B build_GPU_Kokkos/ -S lammps/cmake/ -DBUILD_MPI=yes -DBUILD_OMP=yes -DLAMMPS_MACHINE=GPU_Kokkos -DBUILD_SHARED_LIBS=yes -DCMAKE_INSTALL_PREFIX=/usr/local/Software/LAMMPS/GPU_Kokkos -DPKG_GPU=yes -DPKG_KOKKOS=on -DMPIEXEC_EXECUTABLE=/usr/local/Libraries/OpenMPI/4.1.1/bin/mpicxx -DKokkos_ARCH_ZEN2=yes -DKokkos_ENABLE_OMP=yes -DKokkos_ARCH_AMPERE86=yes -DKokkos_ENABLE_CUDA=yes -DGPU_API=cuda -DGPU_ARCH=sm_86 -DCMAKE_CUDA_ARCHITECTURES=86 -DPKG_OPENMP=yes -DPKG_MOLECULE=yes -DPKG_ASPHERE=yes -DPKG_BROWNIAN=yes -DPKG_RIGID=yes -DPKG_CG-DNA=yes -DPKG_EXTRA-MOLECULE=yes
+
+cmake -B build_twistable/ -S lammps/cmake/ -DBUILD_MPI=yes -DBUILD_OMP=yes -DLAMMPS_MACHINE=twistable -DBUILD_SHARED_LIBS=yes -DCMAKE_INSTALL_PREFIX=/usr/local/Software/LAMMPS/GPU_Kokkos -DPKG_GPU=yes -DPKG_KOKKOS=on -DMPIEXEC_EXECUTABLE=/usr/local/Libraries/OpenMPI/4.1.1/bin/mpicxx -DKokkos_ARCH_ZEN2=yes -DKokkos_ENABLE_OMP=yes -DKokkos_ARCH_AMPERE86=yes -DKokkos_ENABLE_CUDA=yes -DGPU_API=cuda -DGPU_ARCH=sm_86 -DCMAKE_CUDA_ARCHITECTURES=86 -DPKG_OPENMP=yes -DPKG_MOLECULE=yes -DPKG_ASPHERE=yes -DPKG_BROWNIAN=yes -DPKG_RIGID=yes -DPKG_CG-DNA=yes -DPKG_EXTRA-MOLECULE=yes -DPKG_MOLFILE=yes -DMOLFILE_INCLUDE_DIR=/usr/local/Software/VMD/1.9.4a55/vmd/plugins/include
+
+cmake -B build_twistable/ -S lammps/cmake/ -DBUILD_MPI=yes -DBUILD_OMP=yes -DLAMMPS_MACHINE=twistable_GPU_Kokkos -DBUILD_SHARED_LIBS=yes -DCMAKE_INSTALL_PREFIX=/usr/local/Software/LAMMPS/twistable_GPU_Kokkos -DPKG_GPU=yes -DPKG_KOKKOS=on -DMPIEXEC_EXECUTABLE=/usr/local/Libraries/OpenMPI/4.1.1/bin/mpicxx -DKokkos_ARCH_ZEN2=yes -DKokkos_ENABLE_OMP=yes -DKokkos_ARCH_AMPERE86=yes -DKokkos_ENABLE_CUDA=yes -DGPU_API=cuda -DGPU_ARCH=sm_86 -DCMAKE_CUDA_ARCHITECTURES=86 -DPKG_OPENMP=yes -DPKG_MOLECULE=yes -DPKG_ASPHERE=yes -DPKG_BROWNIAN=yes -DPKG_RIGID=yes -DPKG_CG-DNA=yes -DPKG_EXTRA-MOLECULE=yes -DPKG_MOLFILE=yes -DMOLFILE_INCLUDE_DIR=/usr/local/Software/VMD/1.9.4a55/vmd/plugins/include
+
+
+cmake -B build_twistable_OMP/ -S lammps/cmake/ -DBUILD_MPI=yes -DBUILD_OMP=yes -DLAMMPS_MACHINE=twistable_OMP_GPU_Kokkos -DBUILD_SHARED_LIBS=yes -DCMAKE_INSTALL_PREFIX=/usr/local/Software/LAMMPS/twistable_OMP_GPU_Kokkos -DPKG_GPU=yes -DPKG_KOKKOS=on -DMPIEXEC_EXECUTABLE=/usr/local/Libraries/OpenMPI/4.1.1/bin/mpicxx -DKokkos_ARCH_ZEN2=yes -DKokkos_ENABLE_OMP=yes -DKokkos_ARCH_AMPERE86=yes -DKokkos_ENABLE_CUDA=yes -DGPU_API=cuda -DGPU_ARCH=sm_86 -DCMAKE_CUDA_ARCHITECTURES=86 -DPKG_OPENMP=yes -DPKG_MOLECULE=yes -DPKG_ASPHERE=yes -DPKG_BROWNIAN=yes -DPKG_RIGID=yes -DPKG_CG-DNA=yes -DPKG_EXTRA-MOLECULE=yes -DPKG_MOLFILE=yes -DMOLFILE_INCLUDE_DIR=/usr/local/Software/VMD/1.9.4a55/vmd/plugins/include
+
+
+# command for only OpenMP and MPI for acceleration
+
+# home desktop
+cmake -B build_twistable_BD_OMP/ -S lammps/cmake/ -DBUILD_MPI=yes -DBUILD_OMP=yes -DLAMMPS_MACHINE=twistable_BD_OMP -DBUILD_SHARED_LIBS=yes -DCMAKE_INSTALL_PREFIX=/usr/local/Suites/LAMMPS/twistable_BD_OMP -DMPIEXEC_EXECUTABLE=/usr/local/Libraries/OpenMPI/4.1.5/bin/mpicxx -DPKG_OPENMP=yes -DPKG_MOLECULE=yes -DPKG_ASPHERE=yes -DPKG_BROWNIAN=yes -DPKG_RIGID=yes -DPKG_CG-DNA=yes -DPKG_EXTRA-MOLECULE=yes -DPKG_COMPRESS=yes -DPKG_EXTRA-PAIR=yes -DPKG_MOLFILE=yes -DMOLFILE_INCLUDE_DIR=/usr/local/Suites/VMD/1.9.4a51/vmd/plugins/include
+
+# ZLS workstation
+cmake -B build_twistable_BD_OMP/ -S lammps/cmake/ -DBUILD_MPI=yes -DBUILD_OMP=yes -DLAMMPS_MACHINE=twistable_BD_OMP -DBUILD_SHARED_LIBS=yes -DCMAKE_INSTALL_PREFIX=/usr/local/Software/LAMMPS/twistable_BD_OMP -DMPIEXEC_EXECUTABLE=/usr/local/Libraries/OpenMPI/4.1.1/bin/mpicxx -DPKG_OPENMP=yes -DPKG_MOLECULE=yes -DPKG_ASPHERE=yes -DPKG_BROWNIAN=yes -DPKG_RIGID=yes -DPKG_CG-DNA=yes -DPKG_EXTRA-MOLECULE=yes -DPKG_COMPRESS=yes -DPKG_EXTRA-PAIR -DPKG_MOLFILE=yes -DMOLFILE_INCLUDE_DIR=/usr/local/Software/VMD/1.9.4a55/vmd/plugins/include
+
+# Colfax machine
+cmake -B build_twistable_BD_OMP/ -S lammps-23Jun2022/cmake/ -DBUILD_MPI=yes -DBUILD_OMP=yes -DLAMMPS_MACHINE=twistable_BD_OMP -DBUILD_SHARED_LIBS=yes -DCMAKE_INSTALL_PREFIX=/home/brg4/Suites/LAMMPS/twistable_BD_OMP -DMPIEXEC_EXECUTABLE=/home/brg4/Libraries/OpenMPI/4.1.4/bin/mpicxx -DPKG_OPENMP=yes -DPKG_MOLECULE=yes -DPKG_ASPHERE=yes -DPKG_BROWNIAN=yes -DPKG_RIGID=yes -DPKG_CG-DNA=yes -DPKG_EXTRA-MOLECULE=yes -DPKG_COMPRESS=yes

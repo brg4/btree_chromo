@@ -1,0 +1,85 @@
+######################
+######  README  ######
+######################
+
+# PURPOSE: run a simulation of an unreplicated chromosome under the influence of loops and topoisomerase
+
+# NOTE 1: comment the ``terminate'' at the top to execute all of the commands
+
+# NOTE 2: change all directories in this file from ``/home/ben/Workspace/'' to the local repository location
+
+# NOTE 3: by default the runs will be skipped
+
+# NOTE 4: change the number of processors to whatever is appropriate
+
+######################
+######################
+######################
+
+
+#terminate
+
+
+#enable/disable the skipping of runs/minimizations for debugging of directive file
+switch_skip_runs:T
+
+
+#set the prng seed
+btree_prng_seed:10
+
+
+#create a new circular chromosome with 5000 monomers
+new_chromo:5000
+
+
+#load the BD lengths
+load_BD_lengths:/home/ben/Workspace/btree_chromo/examples/simulating_chromosome_with_loops_and_topo/BD_lengths.txt
+
+
+#commands to set up the simulator
+prepare_simulator:log.test
+simulator_set_prng_seed:10
+simulator_set_nProc:8
+simulator_set_DNA_model:/home/ben/Workspace/btree_chromo/LAMMPS_DNA_model/
+simulator_set_delta_t:1.0E+5
+
+
+#load the loop parameters
+simulator_load_loop_params:/home/ben/Workspace/btree_chromo/examples/simulating_chromosome_with_loops_and_topo/loop_params.txt
+
+
+#set the directory and file label for the simulation output
+simulator_set_output_details:/home/ben/Workspace/btree_chromo/examples/simulating_chromosome_with_loops_and_topo/,example
+
+
+#load the monomer coordinates and orientations
+load_mono_coords:/home/ben/Workspace/btree_chromo/examples/simulating_chromosome_with_loops_and_topo/x_mono_5000mono_50ribo_bdry900A.bin,row
+load_mono_quats:/home/ben/Workspace/btree_chromo/examples/simulating_chromosome_with_loops_and_topo/q_mono_5000mono_50ribo_bdry900A.bin,row
+
+
+#load the ribosome coordinates and orientations
+load_ribo_coords:/home/ben/Workspace/btree_chromo/examples/simulating_chromosome_with_loops_and_topo/x_ribo_5000mono_50ribo_bdry900A.bin,row
+load_ribo_quats:/home/ben/Workspace/btree_chromo/examples/simulating_chromosome_with_loops_and_topo/q_ribo_5000mono_50ribo_bdry900A.bin,row
+
+
+#generate a spherical boundary with 900A radius centered at the origin
+spherical_bdry:900.0,0.0,0.0,0.0
+
+
+#write a LAMMPS data file with the current system for the simulation
+write_LAMMPS_data:/home/ben/Workspace/btree_chromo/examples/simulating_chromosome_with_loops_and_topo/data.example
+
+
+#read the LAMMPS data file into the simulator
+simulator_read_data:/home/ben/Workspace/btree_chromo/examples/simulating_chromosome_with_loops_and_topo/data.example
+
+
+#relax the structure
+simulator_relax_progressive:10000,5000
+
+
+#run the system for 300000 total timesteps
+simulator_run_loops:10,100000,10000,25000,noappend,first
+repeat:2
+simulator_run_loops:10,100000,10000,25000,append,nofirst
+end_repeat

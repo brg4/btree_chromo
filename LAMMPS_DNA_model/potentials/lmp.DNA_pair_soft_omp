@@ -1,0 +1,99 @@
+# soft pair potentials
+
+include ${DNA_model_dir}/potentials/lmp.DNA_pair_params
+
+print """
+ ------------------------------------------
+ ---[Soft Pairs, Energetic Parameters  ]---
+ ------------------------------------------
+  kBT = ${kBT} [Kcal/mol]
+  epsilon_soft = ${epsilon_soft} [Kcal/mol]
+  epsilon_LJ = ${epsilon_LJ} [Kcal/mol]
+"""
+
+# 1 - bdry
+# 2 - ribo
+# 3 - DNA monomer
+# 4 - Ori
+# 5 - Ter
+# 6 - Fork
+# 7 - Anchor
+# 8 - Hinge
+
+variable pair_extra_pots equal &
+${Ori_bdry_attraction}+&
+${Ori_pair_repulsion}
+
+variable temp_pstyle string "pair_style hybrid lj/cut/omp 2.5 soft/omp 2.5"
+
+if "${Ori_bdry_attraction}==1" then &
+   "variable temp_pstyle string '${temp_pstyle} morse/omp 2.5'"
+
+if "${Ori_pair_repulsion}==1" then &
+   "variable temp_pstyle string '${temp_pstyle} harmonic/cut/omp'"
+
+print ' PAIR_STYLE: ${temp_pstyle}'
+   
+${temp_pstyle}
+pair_modify shift yes
+
+# basic pair potentials
+
+# DNA
+pair_coeff 3*8 3*8 soft/omp ${epsilon_soft} ${sigma_mono_mono}
+# ribosomes
+pair_coeff 2 3*8 soft/omp ${epsilon_soft} ${sigma_mono_ribo}
+pair_coeff 2 2 soft/omp ${epsilon_soft} ${sigma_ribo_ribo}
+# boundary particles
+pair_coeff 1 3*8 lj/cut/omp ${epsilon_LJ} ${sigma_mono_bdry} ${WCA_mono_bdry}
+pair_coeff 1 2 lj/cut/omp ${epsilon_LJ} ${sigma_ribo_bdry} ${WCA_ribo_bdry}
+pair_coeff 1 1 lj/cut/omp 0.0 ${sigma_bdry_bdry} ${WCA_bdry_bdry}
+
+# extra pair potentials
+
+if "${Ori_bdry_attraction}==1" then &
+   "pair_coeff 1 4 morse/omp ${D_morse} ${a_morse} ${r_morse} ${rcut_morse}"
+
+if "${Ori_pair_repulsion}==1" then &
+   "pair_coeff 4 4 harmonic/cut/omp ${epsilon_ori} ${r_ori_equil}"
+
+# pair_style hybrid &
+# lj/cut/omp 2.5 &
+# soft/omp 2.5 &
+# morse/omp 2.5 &
+# harmonic/cut/omp
+
+# pair_modify shift yes
+
+# # DNA
+# pair_coeff 3 3*8 soft/omp ${epsilon_soft} ${sigma_mono_mono}
+# pair_coeff 4 4 harmonic/cut/omp ${epsilon_ori} ${r_ori_equil}
+# pair_coeff 4 5*8 soft/omp ${epsilon_soft} ${sigma_mono_mono}
+# pair_coeff 5*8 5*8 soft/omp ${epsilon_soft} ${sigma_mono_mono}
+# # ribosomes
+# pair_coeff 2 3*8 soft/omp ${epsilon_soft} ${sigma_mono_ribo}
+# pair_coeff 2 2 soft/omp ${epsilon_soft} ${sigma_ribo_ribo}
+# # boundary particles
+# pair_coeff 1 3 lj/cut/omp ${epsilon_LJ} ${sigma_mono_bdry} ${WCA_mono_bdry}
+# pair_coeff 1 4 morse/omp ${D_morse} ${a_morse} ${r_morse} ${rcut_morse}
+# pair_coeff 1 5*8 lj/cut/omp ${epsilon_LJ} ${sigma_mono_bdry} ${WCA_mono_bdry}
+# pair_coeff 1 2 lj/cut/omp ${epsilon_LJ} ${sigma_ribo_bdry} ${WCA_ribo_bdry}
+# pair_coeff 1 1 lj/cut/omp 0.0 ${sigma_bdry_bdry} ${WCA_bdry_bdry}
+
+
+
+# pair_style hybrid &
+# lj/cut/omp 2.5 &
+# soft/omp 2.5 
+
+# pair_modify shift yes
+
+# # DNA
+# pair_coeff 3*8 3*8 soft/omp ${epsilon_soft} ${sigma_mono_mono}
+# # ribosomes
+# pair_coeff 2 3*8 soft/omp ${epsilon_soft} ${sigma_mono_ribo}
+# pair_coeff 2 2 soft/omp ${epsilon_soft} ${sigma_ribo_ribo}
+# # boundary particles
+# pair_coeff 1 3*8 lj/cut/omp ${epsilon_LJ} ${sigma_mono_bdry} ${WCA_mono_bdry}
+# pair_coeff 1 2 lj/cut/omp ${epsilon_LJ} ${sigma_ribo_bdry} ${WCA_ribo_bdry}
+# pair_coeff 1 1 lj/cut/omp 0.0 ${sigma_bdry_bdry} ${WCA_bdry_bdry}

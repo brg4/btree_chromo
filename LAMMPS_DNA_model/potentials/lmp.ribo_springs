@@ -1,0 +1,3 @@
+# create springs to hold ribosomes
+variable ribos_spring equal 1.0*${kBT}
+fix ribosSpring ribos spring/self ${ribos_spring}

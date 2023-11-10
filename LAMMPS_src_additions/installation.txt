@@ -1,0 +1,39 @@
+This file provides an explanation of how to modify the LAMMPS source code to run the twistable polymer model using multi-threaded versions of the angle_styles in Brackley et al. 2014 and the defaut Brownian dynamics integrator for aspherical particles.
+
+1) Beginning in the directory with the LAMMPS source code (./lammps), copy the following files to the listed directories.
+
+
+./lammps/src
+
+ - angle_polytorsion.cpp
+ - angle_polytorsion.h
+ - angle_polytorsionend.cpp
+ - angle_polytorsionend.h
+
+
+./lammps/src/OPENMP
+
+ - angle_polytorsion_omp.cpp
+ - angle_polytorsion_omp.h
+ - fix_brownian_base_omp.cpp
+ - fix_brownian_base_omp.h
+ - fix_brownian_asphere_omp.cpp
+ - fix_brownian_asphere_omp.h
+
+
+./lammps/cmake/Modules/Packages
+
+ - OPENMP.cmake
+ 
+
+2) Recompile LAMMPS using the cmake command in "cmake_command.txt".
+
+3) LAMMPS should now include the following commands
+
+   Angle Styles:
+    - polytorsion (Brackley et al. 2014)
+    - polytorsionend (Brackley et al. 2014)
+    - polytorsion_omp (new multi-threaded version of "polytorsion" from Brackley et al. 2014)
+
+   Fixes:
+    - fix_brownian_asphere_omp (new multi-threaded version of "fix_brownian_asphere")

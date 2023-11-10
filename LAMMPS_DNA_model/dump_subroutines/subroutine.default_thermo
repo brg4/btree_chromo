@@ -1,0 +1,4 @@
+# default thermo style
+thermo		${T_freq}
+#thermo_style custom step emol epair ebond eangle c_angleE[1] c_angleE[2] c_angleE[3]
+thermo_style custom step emol epair ebond eangle

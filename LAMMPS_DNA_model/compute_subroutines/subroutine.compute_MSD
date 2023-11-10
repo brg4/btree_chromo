@@ -1,0 +1,9 @@
+###
+# computes for MSD
+###
+
+compute dnaMSD DNA msd com no average no
+compute ribosMSD ribos msd com no average no
+compute orisMSD oris msd com no average no
+compute tersMSD ters msd com no average no
+compute forksMSD forks msd com no average no

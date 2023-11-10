@@ -1,0 +1,92 @@
+######################
+######  README  ######
+######################
+
+# PURPOSE: prepare a replicating chromosome using the binary tree
+
+# NOTE 1: comment the ``terminate'' at the top to execute all of the commands
+
+# NOTE 2: change all directories in this file from ``/home/ben/Workspace/'' to the local repository location
+
+######################
+######################
+######################
+
+
+terminate
+
+
+#set the prng seed
+btree_prng_seed:10
+
+
+#create a new circular chromosome with 1000 monomers
+new_chromo:1000
+
+
+#print the current replication state
+print
+
+
+#output the current state
+output_state:/home/ben/Workspace/btree_chromo/examples/preparing_chromosome/chromo_state_0.dat
+
+
+#replicate the mother chromosome by
+# - 100 monomers in the cw direction
+# - 200 monomers in the ccw direction
+transform:m_cw100_ccw200
+
+
+#print the current replication state
+print
+
+
+#replicate the mother's left daughter chromosome by
+# - 50 monomers in the cw direction
+# - 40 monomers in the ccw direction
+transform:ml_cw50_ccw40
+
+
+#print the current replication state
+print
+
+
+#replicate the mother chromosome by
+# - 400 monomers in the cw direction
+# - 300 monomers in the ccw direction
+# this will fully replicate the mother
+transform:m_cw400_ccw300
+
+
+#print the current replication state
+#fork "m" will now show as completed
+print
+
+
+#reset the state by reading the previous output
+input_state:/home/ben/Workspace/btree_chromo/examples/preparing_chromosome/chromo_state_0.dat
+
+
+#print the current replication state
+print
+
+
+#apply a set of replication events from a file
+transforms_file:/home/ben/Workspace/btree_chromo/examples/preparing_chromosome/transforms.dat
+
+
+#print the current replication state
+print
+
+
+#randomly replicate 100 monomers across all active forks
+random_transforms:100
+
+
+#print the current replication state
+print
+
+
+#output the final state
+output_state:/home/ben/Workspace/btree_chromo/examples/preparing_chromosome/chromo_state_1.dat

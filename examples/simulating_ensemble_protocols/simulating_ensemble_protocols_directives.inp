@@ -1,0 +1,135 @@
+######################
+######  README  ######
+######################
+
+# PURPOSE: run a simulation of an ensemble of chromosomes undergoing replication
+
+# NOTE 1: comment the ``terminate'' at the top to execute all of the commands
+
+# NOTE 2: change all directories in this file from ``/home/ben/Workspace/'' to the local repository location
+
+# NOTE 3: by default the runs will be skipped
+
+# NOTE 4: change the number of processors to whatever is appropriate
+
+######################
+######################
+######################
+
+
+terminate
+
+
+#enable/disable the skipping of runs/minimizations for debugging of directive file
+switch_skip_runs:T
+
+
+#set the prng seed
+btree_prng_seed:10
+
+
+#create a new circular chromosome with 5000 monomers
+new_chromo:5000
+
+
+#load the BD lengths
+load_BD_lengths:/home/ben/Workspace/btree_chromo/examples/simulating_ensemble_protocols/BD_lengths.txt
+
+
+#commands to set up the simulator
+prepare_simulator:log.test
+simulator_set_prng_seed:10
+simulator_set_nProc:8
+simulator_set_DNA_model:/home/ben/Workspace/btree_chromo/LAMMPS_DNA_model/
+simulator_set_delta_t:1.0E+5
+
+
+######################################
+# loop over the number of replicates #
+######################################
+repeat_replicates:1,3,5
+
+
+
+
+#create a new circular chromosome with 5000 monomers
+new_chromo:5000
+
+
+#load the monomer coordinates and orientations
+load_mono_coords:/home/ben/Workspace/btree_chromo/examples/simulating_ensemble_protocols/input/x_mono_5000mono_50ribo_bdry900A.bin,row
+load_mono_quats:/home/ben/Workspace/btree_chromo/examples/simulating_ensemble_protocols/input/q_mono_5000mono_50ribo_bdry900A.bin,row
+
+
+#load the ribosome coordinates and orientations
+load_ribo_coords:/home/ben/Workspace/btree_chromo/examples/simulating_ensemble_protocols/input/x_ribo_5000mono_50ribo_bdry900A.bin,row
+load_ribo_quats:/home/ben/Workspace/btree_chromo/examples/simulating_ensemble_protocols/input/q_ribo_5000mono_50ribo_bdry900A.bin,row
+
+
+#generate a spherical boundary with 900A radius centered at the origin
+spherical_bdry:900.0,0.0,0.0,0.0
+
+
+#prepare simulator for a new replicate
+clear_simulator
+simulator_set_output_details:/home/ben/Workspace/btree_chromo/examples/simulating_ensemble_protocols/output/,example
+simulator_reset_timestep:0
+simulator_reset_prev_dump_timestep:0
+
+
+#write the replication state with an appended timestep label
+output_state_at_timestep:/home/ben/Workspace/btree_chromo/examples/simulating_ensemble_protocols/output/example_chromo.dat
+
+
+#write the LAMMPS data file and read it into the simulator with an appended timestep label
+sys_write_sim_read_LAMMPS_data_at_timestep:/home/ben/Workspace/btree_chromo/examples/simulating_ensemble_protocols/output/data.example
+
+
+#relax the structure
+simulator_relax_progressive:10000,5000
+
+
+#run the system
+simulator_run_hard_FENE:100000,1000,20000,noappend,first
+
+
+#begin region whose directives will be repeated twice
+repeat:2
+
+
+#sync the state of the simulator with the system (system will be overwritten by simulator coordinates)
+sync_simulator_and_system
+
+
+#complete the mapping to replicate the 500 monomers
+set_initial_state
+transform:m_cw250_ccw250
+set_final_state
+map_replication
+
+
+#write the replication state with an appended timestep label
+output_state_at_timestep:/home/ben/Workspace/btree_chromo/examples/simulating_ensemble_protocols/output/example_chromo.dat
+
+
+#write the LAMMPS data file with the now replicated monomers and read it into the simulator
+sys_write_sim_read_LAMMPS_data_at_timestep:/home/ben/Workspace/btree_chromo/examples/simulating_ensemble_protocols/output/data.example
+
+
+#relax the structure
+simulator_relax_progressive:10000,10000
+
+
+#run the system, append the output to the current output file and do not write the initial timestep
+simulator_run_hard_FENE:100000,1000,20000,append,nofirst
+
+
+#end the region of directives that will be repeated
+end_repeat
+
+
+
+####################################
+# end the loop over the replicates #
+####################################
+end_repeat_replicates

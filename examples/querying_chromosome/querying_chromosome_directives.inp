@@ -1,0 +1,58 @@
+######################
+######  README  ######
+######################
+
+# PURPOSE: export topology dependent quantities using binary tree chromosome
+
+# NOTE 1: comment the ``terminate'' at the top to execute all of the commands
+
+# NOTE 2: change all directories in this file from ``/home/ben/Workspace/'' to the local repository location
+
+######################
+######################
+######################
+
+
+terminate
+
+
+#set the prng seed
+btree_prng_seed:10
+
+
+#read the chromosome replication state
+input_state:/home/ben/Workspace/btree_chromo/examples/querying_chromosome/chromo_state.dat
+
+
+#print the current state
+print
+
+
+#update the topology, this command is automatically
+# executed for any commands requiring the topology
+update_topology
+
+
+#dump the replicating chromosome's topology
+dump_topology:/home/ben/Workspace/btree_chromo/examples/querying_chromosome/example_topo.dat,0
+
+
+#dump the replicating chromosome's partitioning about forks
+dump_fork_partitions:/home/ben/Workspace/btree_chromo/examples/querying_chromosome/example_fork_partition.dat,0
+
+
+#update the loci (20 monomers per locus) coarse-graining for contact maps
+#this command is automatically executed for any commands requiring the topology
+update_CG_map:20
+
+
+#dump the replicating chromosome's loci (20 monomers per locus) coarse-graining map
+dump_CG_map:/home/ben/Workspace/btree_chromo/examples/querying_chromosome/example_CG_map.dat,20,0
+
+
+#read a regions file encoding features within the genome
+regions_file:/home/ben/Workspace/btree_chromo/examples/querying_chromosome/genome_regions.dat,0
+
+
+#given the current replication state, dump the copy numbers of the regions
+dump_regions:/home/ben/Workspace/btree_chromo/examples/querying_chromosome/example_regions_count.dat,0

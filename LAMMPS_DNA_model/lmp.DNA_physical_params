@@ -1,0 +1,108 @@
+# variables describing temperature
+variable T internal 310.0 # temperature [K]
+variable kBoltz internal 1.98720E-3 # Boltzmann's constant [Kcal/(mol*K)]
+variable kBT equal ${kBoltz}*${T} # [Kcal/mol]
+
+# variables describing lengths
+variable r_mono internal 17.0 # radius of monomer [A]
+variable r_ribo internal 100.0 # radius of ribosome [A]
+variable r_sphere internal 2500.0 # radius of cell membrane [A]
+variable r_bdry equal 2.5*${r_mono} # radius of boundary particles
+variable sigma_mono_mono equal 2*${r_mono}
+variable sigma_mono_ribo equal ${r_mono}+${r_ribo}
+variable sigma_ribo_ribo equal 2*${r_ribo}
+variable sigma_mono_bdry equal ${r_mono}+${r_bdry}
+variable sigma_ribo_bdry equal ${r_ribo}+${r_bdry}
+variable sigma_bdry_bdry equal 2*${r_bdry}
+variable cut_WCA equal 2.0^(1.0/6.0) # cutoff for WCA potentials
+variable WCA_mono_mono equal ${cut_WCA}*${sigma_mono_mono}
+variable WCA_mono_ribo equal ${cut_WCA}*${sigma_mono_ribo}
+variable WCA_ribo_ribo equal ${cut_WCA}*${sigma_ribo_ribo}
+variable WCA_mono_bdry equal ${cut_WCA}*${sigma_mono_bdry}
+variable WCA_ribo_bdry equal ${cut_WCA}*${sigma_ribo_bdry}
+variable WCA_bdry_bdry equal ${cut_WCA}*${sigma_bdry_bdry}
+
+# variables describing masses
+variable m_mono internal 6.17647E+3 # mass of monomer [g/mol]
+variable m_ribo internal 2.11170E+6 # mass of ribosome [g/mol]
+variable m_bdry internal 1.0E+9 # mass of boundary particles [g/mol]
+variable m_eT internal 1.0E-3 # mass of orientation particle [g/mol]
+variable rho_mono equal ${m_mono}/((4.0/3.0)*PI*${r_mono}^3) # density of monomer [g/(mol*A^3)]
+variable rho_ribo equal ${m_ribo}/((4.0/3.0)*PI*${r_ribo}^3) # density of ribosome [g/(mol*A^3)]
+
+# variable describing damping coefficients
+# variable eta equal 1.6840E+5 # dynamic viscosity of cytoplasm [Kcal*fs/(mol*A^3)]
+variable eta internal 7.0434E+1 # dynamic viscosity of cytoplasm [(g/mol)/(fs*A)]
+#variable gamma_t_mono equal 6*PI*${eta}*${r_mono}/${m_mono} # [Kcal*fs/(g*A^2)]
+variable gamma_t_mono equal 6*PI*${eta}*${r_mono} # [(g/mol)/fs]
+variable gamma_r_mono equal ${gamma_t_mono}*(${sigma_mono_mono}^2)/3
+#variable gamma_t_ribo equal 6*PI*${eta}*${r_ribo}/${m_ribo}  # [Kcal*fs/(g*A^2)]
+variable gamma_t_ribo equal 6*PI*${eta}*${r_ribo} # [(g/mol)/fs]
+variable gamma_r_ribo equal ${gamma_t_ribo}*(${sigma_ribo_ribo}^2)/3
+variable ratio_t_mono equal ${m_mono}/${gamma_t_mono}
+variable ratio_t_ribo equal ${m_ribo}/${gamma_t_ribo}
+
+print """
+----------------------------------
+---[[[ DNA Model Parameters ]]]---
+----------------------------------
+ --------------------------------
+ ---[ Temperature and Energy ]---
+ --------------------------------
+  T = ${T} [K]
+  kBT = ${kBT} [Kcal/mol]
+ -----------------
+ ---[ Lengths ]---
+ -----------------
+  r_mono = ${r_mono} [A]
+  r_ribo = ${r_ribo} [A]
+ ----------------
+ ---[ Masses ]---
+ ----------------
+  m_mono = ${m_mono} [g/mol]
+  m_ribo = ${m_ribo} [g/mol]
+"""
+
+print """
+ ------------------------------
+ ---[ Damping Coefficients ]---
+ ------------------------------
+  eta (dynamic viscosity) = ${eta} [Kcal*fs/(mol*A^3)]
+  gamma_t_mono = ${gamma_t_mono} [g/(mol*fs)]
+  gamma_r_mono = ${gamma_r_mono} [g*A/(mol*fs*rad)]
+   BD timescale (mono), m_mono/gamma_t_mono = ${ratio_t_mono} [fs]
+  gamma_t_ribo = ${gamma_t_ribo} [g/(mol*fs)]
+  gamma_r_ribo = ${gamma_r_ribo} [g*A/(mol*fs*rad)]
+   BD timescale (ribo), m_ribo/gamma_t_ribo = ${ratio_t_ribo} [fs]
+"""
+
+
+
+# set the mass
+print """
+ ----------------------------------
+ ---[ Setting Densities/Masses ]---
+ ----------------------------------
+"""
+
+set type 3*8 density ${m_mono}
+set type 2 density ${m_ribo}
+set type 1 density ${m_bdry}
+
+# create groups
+print """
+ ------------------------
+ ---[ Grouping Atoms ]---
+ ------------------------
+"""
+
+group bdry type 1
+group ribos type 2
+group monos type 3
+group oris type 4
+group ters type 5
+group forks type 6
+group anchors type 7
+group hinges type 8
+group DNA union monos oris ters forks anchors hinges
+group DNAribos union DNA ribos

@@ -1,0 +1,2 @@
+# hold boundary particles in a static position
+fix bdryStatic bdry setforce 0.0 0.0 0.0

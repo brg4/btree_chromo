@@ -1,0 +1,2 @@
+include ${DNA_model_dir}/potentials/lmp.DNA_loops
+bond_coeff 2 harmonic/omp ${k_loop} ${r_loop}
