@@ -4,6 +4,8 @@
 
 **A C++ program to model theta structures of replicating bacterial chromosomes using binary trees.**
 
+Gilbert et al., *Frontiers in Cell and Developmental Biology*, 2023, DOI:[10.3389/fcell.2023.1214962](https://doi.org/10.3389/fcell.2023.1214962)
+
 The program is organized in the following manner:
 
 Upon execution a **btree_driver** executes a series of directives stored in a file provided by the user (a full list of directives is provided in the 'Usage' section).
