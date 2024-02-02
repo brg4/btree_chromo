@@ -1,0 +1,192 @@
+
+READING DIRECTIVES:
+
+	/home/ben/Workspace/btree_chromo/examples/querying_chromosome/querying_chromosome_directives.inp
+
+--- PROGRAM DIRECTIVES ---
+
+btree_prng_seed:10
+input_state:/home/ben/Workspace/btree_chromo/examples/querying_chromosome/chromo_state.dat
+print
+update_topology
+dump_topology:/home/ben/Workspace/btree_chromo/examples/querying_chromosome/example_topo.dat,0
+dump_fork_partitions:/home/ben/Workspace/btree_chromo/examples/querying_chromosome/example_fork_partition.dat,0
+update_CG_map:20
+dump_CG_map:/home/ben/Workspace/btree_chromo/examples/querying_chromosome/example_CG_map.dat,20,0
+regions_file:/home/ben/Workspace/btree_chromo/examples/querying_chromosome/genome_regions.dat,0
+dump_regions:/home/ben/Workspace/btree_chromo/examples/querying_chromosome/example_regions_count.dat,0
+
+--------------------------
+
+
+--- BEGIN COMMAND PARAMETER VALIDATION ---
+
+	valid command parameters
+
+--- END COMMAND PARAMETER VALIDATION ---
+
+
+--- BEGIN METACOMMAND EXPANSION ---
+
+	successful metacommand expansion
+
+--- END METACOMMAND EXPANSION ---
+
+
+--- BEGIN COMMAND SEQUENCE VALIDATION ---
+
+	valid command sequence
+
+--- END COMMAND SEQUENCE VALIDATION ---
+
+
+----------------
+--- COMMANDS ---
+----------------
+
+
+COMMAND: btree_prng_seed
+	param_0: 10
+
+COMMAND: input_state
+	param_0: /home/ben/Workspace/btree_chromo/examples/querying_chromosome/chromo_state.dat
+
+COMMAND: print
+
+COMMAND: update_topology
+
+COMMAND: dump_topology
+	param_0: /home/ben/Workspace/btree_chromo/examples/querying_chromosome/example_topo.dat
+	param_1: 0
+
+COMMAND: dump_fork_partitions
+	param_0: /home/ben/Workspace/btree_chromo/examples/querying_chromosome/example_fork_partition.dat
+	param_1: 0
+
+COMMAND: update_CG_map
+	param_0: 20
+
+COMMAND: dump_CG_map
+	param_0: /home/ben/Workspace/btree_chromo/examples/querying_chromosome/example_CG_map.dat
+	param_1: 20
+	param_2: 0
+
+COMMAND: regions_file
+	param_0: /home/ben/Workspace/btree_chromo/examples/querying_chromosome/genome_regions.dat
+	param_1: 0
+
+COMMAND: dump_regions
+	param_0: /home/ben/Workspace/btree_chromo/examples/querying_chromosome/example_regions_count.dat
+	param_1: 0
+
+--------------
+
+
+---BEGIN EXECUTING COMMANDS---
+
+
+COMMAND: btree_prng_seed
+	param_0: 10
+
+
+
+COMMAND: input_state
+	param_0: /home/ben/Workspace/btree_chromo/examples/querying_chromosome/chromo_state.dat
+
+
+
+COMMAND: print
+
+
+
+printing tree with 5 leaves and 4 forks
+fork breakdown: 0 completed, 4 active
+leaves: 
+mll mlr mrl mrrl mrrr 
+active forks: 
+m ml mr mrr 
+total_size = 2350
+| generation = 0
+| rho_t = 600/1000, rho_cw = 300/700, rho_ccw = 300/700
+| start = -1, mid = -1, end = -1
+| start_link = -1, end_link = -1
+| left branch
+  | generation = 1
+  | rho_t = 300/600, rho_cw = 100/100, rho_ccw = 200/200
+  | start = -1, mid = -1, end = -1
+  | start_link = -1, end_link = -1
+  | left branch
+    | generation = 2
+    | start = 0, mid = 500, end = 999
+    | start_link = 999, end_link = 0
+  | right branch
+    | generation = 2
+    | start = 1000, mid = 1200, end = 1299
+    | start_link = 299, end_link = 600
+| right branch
+  | generation = 1
+  | rho_t = 350/600, rho_cw = 200/150, rho_ccw = 150/100
+  | start = -1, mid = -1, end = -1
+  | start_link = -1, end_link = -1
+  | left branch
+    | generation = 2
+    | start = 1300, mid = 1600, end = 1899
+    | start_link = 199, end_link = 800
+  | right branch
+    | generation = 2
+    | rho_t = 100/350, rho_cw = 50/150, rho_ccw = 50/100
+    | start = -1, mid = -1, end = -1
+    | start_link = -1, end_link = -1
+    | left branch
+      | generation = 3
+      | start = 1900, mid = 2050, end = 2249
+      | start_link = 1449, end_link = 1800
+    | right branch
+      | generation = 3
+      | start = 2250, mid = 2300, end = 2349
+      | start_link = 1999, end_link = 2100
+
+
+
+
+COMMAND: update_topology
+
+
+
+COMMAND: dump_topology
+	param_0: /home/ben/Workspace/btree_chromo/examples/querying_chromosome/example_topo.dat
+	param_1: 0
+
+
+
+COMMAND: dump_fork_partitions
+	param_0: /home/ben/Workspace/btree_chromo/examples/querying_chromosome/example_fork_partition.dat
+	param_1: 0
+
+
+
+COMMAND: update_CG_map
+	param_0: 20
+
+
+
+COMMAND: dump_CG_map
+	param_0: /home/ben/Workspace/btree_chromo/examples/querying_chromosome/example_CG_map.dat
+	param_1: 20
+	param_2: 0
+
+
+
+COMMAND: regions_file
+	param_0: /home/ben/Workspace/btree_chromo/examples/querying_chromosome/genome_regions.dat
+	param_1: 0
+
+
+
+COMMAND: dump_regions
+	param_0: /home/ben/Workspace/btree_chromo/examples/querying_chromosome/example_regions_count.dat
+	param_1: 0
+
+
+---END EXECUTING COMMANDS---
+

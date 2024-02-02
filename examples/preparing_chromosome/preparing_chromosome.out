@@ -1,0 +1,396 @@
+
+READING DIRECTIVES:
+
+	/home/ben/Workspace/btree_chromo/examples/preparing_chromosome/preparing_chromosome_directives.inp
+
+--- PROGRAM DIRECTIVES ---
+
+btree_prng_seed:10
+new_chromo:1000
+print
+output_state:/home/ben/Workspace/btree_chromo/examples/preparing_chromosome/chromo_state_0.dat
+transform:m_cw100_ccw200
+print
+transform:ml_cw50_ccw40
+print
+transform:m_cw400_ccw300
+print
+input_state:/home/ben/Workspace/btree_chromo/examples/preparing_chromosome/chromo_state_0.dat
+print
+transforms_file:/home/ben/Workspace/btree_chromo/examples/preparing_chromosome/transforms.dat
+print
+random_transforms:100
+print
+output_state:/home/ben/Workspace/btree_chromo/examples/preparing_chromosome/chromo_state_1.dat
+
+--------------------------
+
+
+--- BEGIN COMMAND PARAMETER VALIDATION ---
+
+	valid command parameters
+
+--- END COMMAND PARAMETER VALIDATION ---
+
+
+--- BEGIN METACOMMAND EXPANSION ---
+
+	successful metacommand expansion
+
+--- END METACOMMAND EXPANSION ---
+
+
+--- BEGIN COMMAND SEQUENCE VALIDATION ---
+
+	valid command sequence
+
+--- END COMMAND SEQUENCE VALIDATION ---
+
+
+----------------
+--- COMMANDS ---
+----------------
+
+
+COMMAND: btree_prng_seed
+	param_0: 10
+
+COMMAND: new_chromo
+	param_0: 1000
+
+COMMAND: print
+
+COMMAND: output_state
+	param_0: /home/ben/Workspace/btree_chromo/examples/preparing_chromosome/chromo_state_0.dat
+
+COMMAND: transform
+	param_0: m_cw100_ccw200
+
+COMMAND: print
+
+COMMAND: transform
+	param_0: ml_cw50_ccw40
+
+COMMAND: print
+
+COMMAND: transform
+	param_0: m_cw400_ccw300
+
+COMMAND: print
+
+COMMAND: input_state
+	param_0: /home/ben/Workspace/btree_chromo/examples/preparing_chromosome/chromo_state_0.dat
+
+COMMAND: print
+
+COMMAND: transforms_file
+	param_0: /home/ben/Workspace/btree_chromo/examples/preparing_chromosome/transforms.dat
+
+COMMAND: print
+
+COMMAND: random_transforms
+	param_0: 100
+
+COMMAND: print
+
+COMMAND: output_state
+	param_0: /home/ben/Workspace/btree_chromo/examples/preparing_chromosome/chromo_state_1.dat
+
+--------------
+
+
+---BEGIN EXECUTING COMMANDS---
+
+
+COMMAND: btree_prng_seed
+	param_0: 10
+
+
+
+COMMAND: new_chromo
+	param_0: 1000
+
+
+
+COMMAND: print
+
+
+
+printing tree with 1 leaves and 0 forks
+fork breakdown: 0 completed, 0 active
+leaves: 
+m 
+total_size = 1000
+| generation = 0
+| start = 0, mid = 500, end = 999
+| start_link = 999, end_link = 0
+
+
+
+
+COMMAND: output_state
+	param_0: /home/ben/Workspace/btree_chromo/examples/preparing_chromosome/chromo_state_0.dat
+
+
+
+COMMAND: transform
+	param_0: m_cw100_ccw200
+
+
+
+COMMAND: print
+
+
+
+printing tree with 2 leaves and 1 forks
+fork breakdown: 0 completed, 1 active
+leaves: 
+ml mr 
+active forks: 
+m 
+total_size = 1300
+| generation = 0
+| rho_t = 300/1000, rho_cw = 100/800, rho_ccw = 200/900
+| start = 0, mid = 500, end = 999
+| start_link = 999, end_link = 0
+| left branch
+  | generation = 1
+  | start = 0, mid = 500, end = 999
+  | start_link = 999, end_link = 0
+| right branch
+  | generation = 1
+  | start = 1000, mid = 1200, end = 1299
+  | start_link = 299, end_link = 600
+
+
+
+
+COMMAND: transform
+	param_0: ml_cw50_ccw40
+
+
+
+COMMAND: print
+
+
+
+printing tree with 3 leaves and 2 forks
+fork breakdown: 0 completed, 2 active
+leaves: 
+mll mlr mr 
+active forks: 
+m ml 
+total_size = 1390
+| generation = 0
+| rho_t = 300/1000, rho_cw = 100/800, rho_ccw = 200/900
+| start = 0, mid = 500, end = 999
+| start_link = 999, end_link = 0
+| left branch
+  | generation = 1
+  | rho_t = 90/300, rho_cw = 50/60, rho_ccw = 40/150
+  | start = 0, mid = 500, end = 999
+  | start_link = 999, end_link = 0
+  | left branch
+    | generation = 2
+    | start = 0, mid = 500, end = 999
+    | start_link = 999, end_link = 0
+  | right branch
+    | generation = 2
+    | start = 1000, mid = 1040, end = 1089
+    | start_link = 459, end_link = 550
+| right branch
+  | generation = 1
+  | start = 1090, mid = 1290, end = 1389
+  | start_link = 299, end_link = 600
+
+
+
+
+COMMAND: transform
+	param_0: m_cw400_ccw300
+
+
+
+COMMAND: print
+
+
+
+printing tree with 3 leaves and 2 forks
+fork breakdown: 1 completed, 1 active
+leaves: 
+mll mlr mr 
+completed forks: 
+m 
+active forks: 
+ml 
+total_size = 2090
+| generation = 0
+| rho_t = 1000/1000, rho_cw = 1000/0, rho_ccw = 1000/0
+| start = 0, mid = 500, end = 999
+| start_link = 999, end_link = 0
+| left branch
+  | generation = 1
+  | rho_t = 90/1000, rho_cw = 50/960, rho_ccw = 40/950
+  | start = 0, mid = 500, end = 999
+  | start_link = 999, end_link = 0
+  | left branch
+    | generation = 2
+    | start = 0, mid = 500, end = 999
+    | start_link = 999, end_link = 0
+  | right branch
+    | generation = 2
+    | start = 1000, mid = 1040, end = 1089
+    | start_link = 459, end_link = 550
+| right branch
+  | generation = 1
+  | start = 1090, mid = 1590, end = 2089
+  | start_link = 2089, end_link = 1090
+
+
+
+
+COMMAND: input_state
+	param_0: /home/ben/Workspace/btree_chromo/examples/preparing_chromosome/chromo_state_0.dat
+
+
+
+COMMAND: print
+
+
+
+printing tree with 1 leaves and 0 forks
+fork breakdown: 0 completed, 0 active
+leaves: 
+m 
+total_size = 1000
+| generation = 0
+| start = 0, mid = 500, end = 999
+| start_link = 999, end_link = 0
+
+
+
+
+COMMAND: transforms_file
+	param_0: /home/ben/Workspace/btree_chromo/examples/preparing_chromosome/transforms.dat
+
+
+
+COMMAND: print
+
+
+
+printing tree with 5 leaves and 4 forks
+fork breakdown: 0 completed, 4 active
+leaves: 
+mll mlr mrl mrrl mrrr 
+active forks: 
+m ml mr mrr 
+total_size = 2450
+| generation = 0
+| rho_t = 600/1000, rho_cw = 300/700, rho_ccw = 300/700
+| start = 0, mid = 500, end = 999
+| start_link = 999, end_link = 0
+| left branch
+  | generation = 1
+  | rho_t = 400/600, rho_cw = 200/100, rho_ccw = 200/100
+  | start = -1, mid = -1, end = -1
+  | start_link = -1, end_link = -1
+  | left branch
+    | generation = 2
+    | start = 0, mid = 500, end = 999
+    | start_link = 999, end_link = 0
+  | right branch
+    | generation = 2
+    | start = 1000, mid = 1200, end = 1399
+    | start_link = 299, end_link = 700
+| right branch
+  | generation = 1
+  | rho_t = 350/600, rho_cw = 200/150, rho_ccw = 150/100
+  | start = -1, mid = -1, end = -1
+  | start_link = -1, end_link = -1
+  | left branch
+    | generation = 2
+    | start = 1400, mid = 1700, end = 1999
+    | start_link = 199, end_link = 800
+  | right branch
+    | generation = 2
+    | rho_t = 100/350, rho_cw = 50/150, rho_ccw = 50/100
+    | start = -1, mid = -1, end = -1
+    | start_link = -1, end_link = -1
+    | left branch
+      | generation = 3
+      | start = 2000, mid = 2150, end = 2349
+      | start_link = 1549, end_link = 1900
+    | right branch
+      | generation = 3
+      | start = 2350, mid = 2400, end = 2449
+      | start_link = 2099, end_link = 2200
+
+
+
+
+COMMAND: random_transforms
+	param_0: 100
+
+
+
+COMMAND: print
+
+
+
+printing tree with 5 leaves and 4 forks
+fork breakdown: 0 completed, 4 active
+leaves: 
+mll mlr mrl mrrl mrrr 
+active forks: 
+m ml mr mrr 
+total_size = 2550
+| generation = 0
+| rho_t = 634/1000, rho_cw = 314/680, rho_ccw = 320/686
+| start = 0, mid = 500, end = 999
+| start_link = 999, end_link = 0
+| left branch
+  | generation = 1
+  | rho_t = 425/634, rho_cw = 217/106, rho_ccw = 208/103
+  | start = -1, mid = -1, end = -1
+  | start_link = -1, end_link = -1
+  | left branch
+    | generation = 2
+    | start = 0, mid = 500, end = 999
+    | start_link = 999, end_link = 0
+  | right branch
+    | generation = 2
+    | start = 1000, mid = 1208, end = 1424
+    | start_link = 291, end_link = 717
+| right branch
+  | generation = 1
+  | rho_t = 360/634, rho_cw = 208/162, rho_ccw = 152/112
+  | start = -1, mid = -1, end = -1
+  | start_link = -1, end_link = -1
+  | left branch
+    | generation = 2
+    | start = 1425, mid = 1745, end = 2058
+    | start_link = 179, end_link = 814
+  | right branch
+    | generation = 2
+    | rho_t = 131/360, rho_cw = 68/145, rho_ccw = 63/84
+    | start = -1, mid = -1, end = -1
+    | start_link = -1, end_link = -1
+    | left branch
+      | generation = 3
+      | start = 2059, mid = 2211, end = 2418
+      | start_link = 1592, end_link = 1953
+    | right branch
+      | generation = 3
+      | start = 2419, mid = 2482, end = 2549
+      | start_link = 2147, end_link = 2279
+
+
+
+
+COMMAND: output_state
+	param_0: /home/ben/Workspace/btree_chromo/examples/preparing_chromosome/chromo_state_1.dat
+
+
+---END EXECUTING COMMANDS---
+

@@ -1,0 +1,362 @@
+
+READING DIRECTIVES:
+
+	/home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/preparing_physical_structure_directives.inp
+
+--- PROGRAM DIRECTIVES ---
+
+btree_prng_seed:10
+new_chromo:5000
+load_BD_lengths:/home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/BD_lengths.txt
+load_mono_coords:/home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/x_mono_5000mono_50ribo_bdry900A.bin,row
+load_mono_quats:/home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/q_mono_5000mono_50ribo_bdry900A.bin,row
+load_ribo_coords:/home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/x_ribo_5000mono_50ribo_bdry900A.bin,row
+load_ribo_quats:/home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/q_ribo_5000mono_50ribo_bdry900A.bin,row
+load_bdry_coords:/home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/x_bdry_5000mono_50ribo_bdry900A.bin,row
+spherical_bdry:900.0,0.0,0.0,0.0
+write_LAMMPS_data:/home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/data.unreplicated
+write_mono_xyz:/home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/mono_unreplicated.xyz
+set_initial_state
+transform:m_cw500_ccw500
+set_final_state
+map_replication
+output_state:/home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/replicated_chromo.dat
+write_LAMMPS_data:/home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/data.replicated
+write_mono_xyz:/home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/mono_replicated.xyz
+write_mono_coords:/home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/x_mono_replicated.bin,row
+write_mono_quats:/home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/q_mono_replicated.bin,row
+write_ribo_coords:/home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/x_ribo_replicated.bin,row
+write_ribo_quats:/home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/q_ribo_replicated.bin,row
+write_bdry_coords:/home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/x_bdry_replicated.bin,row
+
+--------------------------
+
+
+--- BEGIN COMMAND PARAMETER VALIDATION ---
+
+	valid command parameters
+
+--- END COMMAND PARAMETER VALIDATION ---
+
+
+--- BEGIN METACOMMAND EXPANSION ---
+
+	successful metacommand expansion
+
+--- END METACOMMAND EXPANSION ---
+
+
+--- BEGIN COMMAND SEQUENCE VALIDATION ---
+
+	valid command sequence
+
+--- END COMMAND SEQUENCE VALIDATION ---
+
+
+----------------
+--- COMMANDS ---
+----------------
+
+
+COMMAND: btree_prng_seed
+	param_0: 10
+
+COMMAND: new_chromo
+	param_0: 5000
+
+COMMAND: load_BD_lengths
+	param_0: /home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/BD_lengths.txt
+
+COMMAND: load_mono_coords
+	param_0: /home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/x_mono_5000mono_50ribo_bdry900A.bin
+	param_1: row
+
+COMMAND: load_mono_quats
+	param_0: /home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/q_mono_5000mono_50ribo_bdry900A.bin
+	param_1: row
+
+COMMAND: load_ribo_coords
+	param_0: /home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/x_ribo_5000mono_50ribo_bdry900A.bin
+	param_1: row
+
+COMMAND: load_ribo_quats
+	param_0: /home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/q_ribo_5000mono_50ribo_bdry900A.bin
+	param_1: row
+
+COMMAND: load_bdry_coords
+	param_0: /home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/x_bdry_5000mono_50ribo_bdry900A.bin
+	param_1: row
+
+COMMAND: spherical_bdry
+	param_0: 900.0
+	param_1: 0.0
+	param_2: 0.0
+	param_3: 0.0
+
+COMMAND: write_LAMMPS_data
+	param_0: /home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/data.unreplicated
+
+COMMAND: write_mono_xyz
+	param_0: /home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/mono_unreplicated.xyz
+
+COMMAND: set_initial_state
+
+COMMAND: transform
+	param_0: m_cw500_ccw500
+
+COMMAND: set_final_state
+
+COMMAND: map_replication
+
+COMMAND: output_state
+	param_0: /home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/replicated_chromo.dat
+
+COMMAND: write_LAMMPS_data
+	param_0: /home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/data.replicated
+
+COMMAND: write_mono_xyz
+	param_0: /home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/mono_replicated.xyz
+
+COMMAND: write_mono_coords
+	param_0: /home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/x_mono_replicated.bin
+	param_1: row
+
+COMMAND: write_mono_quats
+	param_0: /home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/q_mono_replicated.bin
+	param_1: row
+
+COMMAND: write_ribo_coords
+	param_0: /home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/x_ribo_replicated.bin
+	param_1: row
+
+COMMAND: write_ribo_quats
+	param_0: /home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/q_ribo_replicated.bin
+	param_1: row
+
+COMMAND: write_bdry_coords
+	param_0: /home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/x_bdry_replicated.bin
+	param_1: row
+
+--------------
+
+
+---BEGIN EXECUTING COMMANDS---
+
+
+COMMAND: btree_prng_seed
+	param_0: 10
+
+
+
+COMMAND: new_chromo
+	param_0: 5000
+
+
+
+COMMAND: load_BD_lengths
+	param_0: /home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/BD_lengths.txt
+
+
+
+COMMAND: load_mono_coords
+	param_0: /home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/x_mono_5000mono_50ribo_bdry900A.bin
+	param_1: row
+
+
+N = 5000
+N_data = 15000
+N_bin_coords = 5000
+
+COMMAND: load_mono_quats
+	param_0: /home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/q_mono_5000mono_50ribo_bdry900A.bin
+	param_1: row
+
+
+N_data = 20000
+N_bin_quats = 5000
+
+COMMAND: load_ribo_coords
+	param_0: /home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/x_ribo_5000mono_50ribo_bdry900A.bin
+	param_1: row
+
+
+N_data = 150
+N_bin_coords = 50
+N = 50
+
+COMMAND: load_ribo_quats
+	param_0: /home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/q_ribo_5000mono_50ribo_bdry900A.bin
+	param_1: row
+
+
+N_data = 200
+N_bin_quats = 50
+
+COMMAND: load_bdry_coords
+	param_0: /home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/x_bdry_5000mono_50ribo_bdry900A.bin
+	param_1: row
+
+
+N_data = 7686
+N_bin_coords = 2562
+N = 2562
+
+COMMAND: spherical_bdry
+	param_0: 900.0
+	param_1: 0.0
+	param_2: 0.0
+	param_3: 0.0
+
+
+
+COMMAND: write_LAMMPS_data
+	param_0: /home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/data.unreplicated
+
+
+N = 5000
+N = 5000
+N = 5050
+N = 5050
+N = 7612
+
+COMMAND: write_mono_xyz
+	param_0: /home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/mono_unreplicated.xyz
+
+
+
+COMMAND: set_initial_state
+
+
+
+COMMAND: transform
+	param_0: m_cw500_ccw500
+
+
+
+COMMAND: set_final_state
+
+
+
+COMMAND: map_replication
+
+
+initial tree before transforms
+
+
+printing tree with 1 leaves and 0 forks
+fork breakdown: 0 completed, 0 active
+leaves: 
+m 
+total_size = 5000
+| generation = 0
+| start = 0, mid = 2500, end = 4999
+| start_link = 4999, end_link = 0
+
+
+
+final tree after transforms
+
+
+printing tree with 2 leaves and 1 forks
+fork breakdown: 0 completed, 1 active
+leaves: 
+ml mr 
+active forks: 
+m 
+total_size = 6000
+| generation = 0
+| rho_t = 1000/5000, rho_cw = 500/4500, rho_ccw = 500/4500
+| start = -1, mid = -1, end = -1
+| start_link = -1, end_link = -1
+| left branch
+  | generation = 1
+  | start = 0, mid = 2500, end = 4999
+  | start_link = 4999, end_link = 0
+| right branch
+  | generation = 1
+  | start = 5000, mid = 5500, end = 5999
+  | start_link = 1999, end_link = 3000
+
+
+
+i_trans = 0
+m_cw500_ccw500
+N_prev = 5000
+N_new = 6000
+
+printing tree with 2 leaves and 1 forks
+fork breakdown: 0 completed, 1 active
+leaves: 
+ml mr 
+active forks: 
+m 
+total_size = 6000
+| generation = 0
+| rho_t = 1000/5000, rho_cw = 500/4500, rho_ccw = 500/4500
+| start = -1, mid = -1, end = -1
+| start_link = -1, end_link = -1
+| left branch
+  | generation = 1
+  | start = 0, mid = 2500, end = 4999
+  | start_link = 4999, end_link = 0
+| right branch
+  | generation = 1
+  | start = 5000, mid = 5500, end = 5999
+  | start_link = 1999, end_link = 3000
+
+
+
+N = 5000
+N = 6000
+
+COMMAND: output_state
+	param_0: /home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/replicated_chromo.dat
+
+
+
+COMMAND: write_LAMMPS_data
+	param_0: /home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/data.replicated
+
+
+N = 6000
+N = 6000
+N = 6050
+N = 6050
+N = 8612
+
+COMMAND: write_mono_xyz
+	param_0: /home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/mono_replicated.xyz
+
+
+
+COMMAND: write_mono_coords
+	param_0: /home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/x_mono_replicated.bin
+	param_1: row
+
+
+
+COMMAND: write_mono_quats
+	param_0: /home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/q_mono_replicated.bin
+	param_1: row
+
+
+
+COMMAND: write_ribo_coords
+	param_0: /home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/x_ribo_replicated.bin
+	param_1: row
+
+
+
+COMMAND: write_ribo_quats
+	param_0: /home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/q_ribo_replicated.bin
+	param_1: row
+
+
+
+COMMAND: write_bdry_coords
+	param_0: /home/ben/Workspace/btree_chromo/examples/preparing_physical_structure/x_bdry_replicated.bin
+	param_1: row
+
+
+---END EXECUTING COMMANDS---
+

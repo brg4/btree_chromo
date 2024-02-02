@@ -1,0 +1,894 @@
+
+READING DIRECTIVES:
+
+	/home/ben/Workspace/btree_chromo/examples/simulating_chromosome/simulating_chromosome_directives.inp
+
+--- PROGRAM DIRECTIVES ---
+
+switch_skip_runs:F
+btree_prng_seed:10
+new_chromo:5000
+load_BD_lengths:/home/ben/Workspace/btree_chromo/examples/simulating_chromosome/BD_lengths.txt
+prepare_simulator:log.test
+simulator_set_prng_seed:10
+simulator_set_nProc:8
+simulator_set_DNA_model:/home/ben/Workspace/btree_chromo/LAMMPS_DNA_model/
+simulator_set_delta_t:1.0E+5
+simulator_set_output_details:/home/ben/Workspace/btree_chromo/examples/simulating_chromosome/,example
+load_mono_coords:/home/ben/Workspace/btree_chromo/examples/simulating_chromosome/x_mono_5000mono_50ribo_bdry900A.bin,row
+load_mono_quats:/home/ben/Workspace/btree_chromo/examples/simulating_chromosome/q_mono_5000mono_50ribo_bdry900A.bin,row
+load_ribo_coords:/home/ben/Workspace/btree_chromo/examples/simulating_chromosome/x_ribo_5000mono_50ribo_bdry900A.bin,row
+load_ribo_quats:/home/ben/Workspace/btree_chromo/examples/simulating_chromosome/q_ribo_5000mono_50ribo_bdry900A.bin,row
+spherical_bdry:900.0,0.0,0.0,0.0
+write_LAMMPS_data:/home/ben/Workspace/btree_chromo/examples/simulating_chromosome/data.example
+simulator_read_data:/home/ben/Workspace/btree_chromo/examples/simulating_chromosome/data.example
+simulator_relax_progressive:10000,5000
+simulator_run_hard_FENE:50000,1000,5000,noappend,first
+
+--------------------------
+
+
+--- BEGIN COMMAND PARAMETER VALIDATION ---
+
+	valid command parameters
+
+--- END COMMAND PARAMETER VALIDATION ---
+
+
+--- BEGIN METACOMMAND EXPANSION ---
+
+	successful metacommand expansion
+
+--- END METACOMMAND EXPANSION ---
+
+
+--- BEGIN COMMAND SEQUENCE VALIDATION ---
+
+	valid command sequence
+
+--- END COMMAND SEQUENCE VALIDATION ---
+
+
+----------------
+--- COMMANDS ---
+----------------
+
+
+COMMAND: switch_skip_runs
+	param_0: F
+
+COMMAND: btree_prng_seed
+	param_0: 10
+
+COMMAND: new_chromo
+	param_0: 5000
+
+COMMAND: load_BD_lengths
+	param_0: /home/ben/Workspace/btree_chromo/examples/simulating_chromosome/BD_lengths.txt
+
+COMMAND: prepare_simulator
+	param_0: log.test
+
+COMMAND: simulator_set_prng_seed
+	param_0: 10
+
+COMMAND: simulator_set_nProc
+	param_0: 8
+
+COMMAND: simulator_set_DNA_model
+	param_0: /home/ben/Workspace/btree_chromo/LAMMPS_DNA_model/
+
+COMMAND: simulator_set_delta_t
+	param_0: 1.0E+5
+
+COMMAND: simulator_set_output_details
+	param_0: /home/ben/Workspace/btree_chromo/examples/simulating_chromosome/
+	param_1: example
+
+COMMAND: load_mono_coords
+	param_0: /home/ben/Workspace/btree_chromo/examples/simulating_chromosome/x_mono_5000mono_50ribo_bdry900A.bin
+	param_1: row
+
+COMMAND: load_mono_quats
+	param_0: /home/ben/Workspace/btree_chromo/examples/simulating_chromosome/q_mono_5000mono_50ribo_bdry900A.bin
+	param_1: row
+
+COMMAND: load_ribo_coords
+	param_0: /home/ben/Workspace/btree_chromo/examples/simulating_chromosome/x_ribo_5000mono_50ribo_bdry900A.bin
+	param_1: row
+
+COMMAND: load_ribo_quats
+	param_0: /home/ben/Workspace/btree_chromo/examples/simulating_chromosome/q_ribo_5000mono_50ribo_bdry900A.bin
+	param_1: row
+
+COMMAND: spherical_bdry
+	param_0: 900.0
+	param_1: 0.0
+	param_2: 0.0
+	param_3: 0.0
+
+COMMAND: write_LAMMPS_data
+	param_0: /home/ben/Workspace/btree_chromo/examples/simulating_chromosome/data.example
+
+COMMAND: simulator_read_data
+	param_0: /home/ben/Workspace/btree_chromo/examples/simulating_chromosome/data.example
+
+COMMAND: simulator_relax_progressive
+	param_0: 10000
+	param_1: 5000
+
+COMMAND: simulator_run_hard_FENE
+	param_0: 50000
+	param_1: 1000
+	param_2: 5000
+	param_3: noappend
+	param_4: first
+
+--------------
+
+
+---BEGIN EXECUTING COMMANDS---
+
+
+COMMAND: switch_skip_runs
+	param_0: F
+
+
+
+COMMAND: btree_prng_seed
+	param_0: 10
+
+
+
+COMMAND: new_chromo
+	param_0: 5000
+
+
+
+COMMAND: load_BD_lengths
+	param_0: /home/ben/Workspace/btree_chromo/examples/simulating_chromosome/BD_lengths.txt
+
+
+
+COMMAND: prepare_simulator
+	param_0: log.test
+
+
+LAMMPS (17 Feb 2022)
+OMP_NUM_THREADS environment is not set. Defaulting to 1 thread. (src/comm.cpp:98)
+  using 1 OpenMP thread(s) per MPI task
+
+COMMAND: simulator_set_prng_seed
+	param_0: 10
+
+
+
+COMMAND: simulator_set_nProc
+	param_0: 8
+
+
+
+COMMAND: simulator_set_DNA_model
+	param_0: /home/ben/Workspace/btree_chromo/LAMMPS_DNA_model/
+
+
+
+COMMAND: simulator_set_delta_t
+	param_0: 1.0E+5
+
+
+
+COMMAND: simulator_set_output_details
+	param_0: /home/ben/Workspace/btree_chromo/examples/simulating_chromosome/
+	param_1: example
+
+
+
+COMMAND: load_mono_coords
+	param_0: /home/ben/Workspace/btree_chromo/examples/simulating_chromosome/x_mono_5000mono_50ribo_bdry900A.bin
+	param_1: row
+
+
+N = 5000
+N_data = 15000
+N_bin_coords = 5000
+
+COMMAND: load_mono_quats
+	param_0: /home/ben/Workspace/btree_chromo/examples/simulating_chromosome/q_mono_5000mono_50ribo_bdry900A.bin
+	param_1: row
+
+
+N_data = 20000
+N_bin_quats = 5000
+
+COMMAND: load_ribo_coords
+	param_0: /home/ben/Workspace/btree_chromo/examples/simulating_chromosome/x_ribo_5000mono_50ribo_bdry900A.bin
+	param_1: row
+
+
+N_data = 150
+N_bin_coords = 50
+N = 50
+
+COMMAND: load_ribo_quats
+	param_0: /home/ben/Workspace/btree_chromo/examples/simulating_chromosome/q_ribo_5000mono_50ribo_bdry900A.bin
+	param_1: row
+
+
+N_data = 200
+N_bin_quats = 50
+
+COMMAND: spherical_bdry
+	param_0: 900.0
+	param_1: 0.0
+	param_2: 0.0
+	param_3: 0.0
+
+
+N = 2562
+
+COMMAND: write_LAMMPS_data
+	param_0: /home/ben/Workspace/btree_chromo/examples/simulating_chromosome/data.example
+
+
+N = 5000
+N = 5000
+N = 5050
+N = 5050
+N = 7612
+
+COMMAND: simulator_read_data
+	param_0: /home/ben/Workspace/btree_chromo/examples/simulating_chromosome/data.example
+
+
+OMP_NUM_THREADS environment is not set. Defaulting to 1 thread. (src/comm.cpp:98)
+  using 1 OpenMP thread(s) per MPI task
+set 8 OpenMP thread(s) per MPI task
+using multi-threaded neighbor list subroutines
+WARNING: Atom style hybrid defines both, per-type and per-atom masses; both must be set, but only per-atom masses will be used (src/atom_vec_hybrid.cpp:157)
+Reading data file ...
+  orthogonal box = (-1131 -1131 -1131) to (1131 1131 1131)
+  1 by 1 by 1 MPI processor grid
+  reading atoms ...
+  7612 atoms
+  5050 ellipsoids
+  scanning bonds ...
+  3 = max bonds/atom
+  scanning angles ...
+  2 = max angles/atom
+  reading bonds ...
+  5000 bonds
+  reading angles ...
+  10000 angles
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:    0        0        0       
+  special bond factors coul:  0        0        0       
+     2 = max # of 1-2 neighbors
+     2 = max # of 1-3 neighbors
+     4 = max # of 1-4 neighbors
+     6 = max # of special neighbors
+  special bonds CPU = 0.003 seconds
+  read_data CPU = 0.045 seconds
+
+----------------------------------
+---[[[ DNA Model Parameters ]]]---
+----------------------------------
+ --------------------------------
+ ---[ Temperature and Energy ]---
+ --------------------------------
+  T = 310 [K]
+  kBT = 0.616032 [Kcal/mol]
+ -----------------
+ ---[ Lengths ]---
+ -----------------
+  r_mono = 17 [A]
+  r_ribo = 100 [A]
+ ----------------
+ ---[ Masses ]---
+ ----------------
+  m_mono = 6176.47 [g/mol]
+  m_ribo = 2111700 [g/mol]
+
+
+ ------------------------------
+ ---[ Damping Coefficients ]---
+ ------------------------------
+  eta (dynamic viscosity) = 70.434 [Kcal*fs/(mol*A^3)]
+  gamma_t_mono = 22570.0435702202 [g/(mol*fs)]
+  gamma_r_mono = 8696990.12239152 [g*A/(mol*fs*rad)]
+   BD timescale (mono), m_mono/gamma_t_mono = 0.273657867818628 [fs]
+  gamma_t_ribo = 132764.962177766 [g/(mol*fs)]
+  gamma_r_ribo = 1770199495.70355 [g*A/(mol*fs*rad)]
+   BD timescale (ribo), m_ribo/gamma_t_ribo = 15.905551926965 [fs]
+
+
+ ----------------------------------
+ ---[ Setting Densities/Masses ]---
+ ----------------------------------
+
+Setting atom values ...
+  5000 settings made for density
+Setting atom values ...
+  50 settings made for density
+Setting atom values ...
+  2562 settings made for density
+
+ ------------------------
+ ---[ Grouping Atoms ]---
+ ------------------------
+
+2562 atoms in group bdry
+50 atoms in group ribos
+4998 atoms in group monos
+1 atoms in group oris
+1 atoms in group ters
+0 atoms in group forks
+0 atoms in group anchors
+0 atoms in group hinges
+5000 atoms in group DNA
+5050 atoms in group DNAribos
+
+COMMAND: simulator_relax_progressive
+	param_0: 10000
+	param_1: 5000
+
+
+
+ -----------------------------------------------------
+ ---[ Twistable DNA (stiff), Energetic Parameters ]---
+ -----------------------------------------------------
+  kBT = 0.616032 [Kcal/mol]
+  k_stretch = 0.532899653979239 [Kcal/(mol*A^2)]
+  k_bend = 8.15336470588235 [Kcal/mol]
+  k_twist = 7.7004 [Kcal/mol]
+  k_align = 15.4008 [Kcal/mol]
+
+
+ -------------------------------------
+ ---[ Loops, Energetic Parameters ]---
+ -------------------------------------
+  kBT = 0.616032 [Kcal/mol]
+  k_loop = 0.201153306122449 [Kcal/(mol*A^2)]
+  r_loop = 68 [A]
+
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:    0        0        0       
+  special bond factors coul:  0        0        0       
+     2 = max # of 1-2 neighbors
+     2 = max # of 1-3 neighbors
+     4 = max # of 1-4 neighbors
+  10000 = # of 1-3 neighbors before angle trim
+  10000 = # of 1-3 neighbors after angle trim
+     6 = max # of special neighbors
+  special bonds CPU = 0.003 seconds
+
+ ------------------------------------------
+ ---[Soft Pairs, Energetic Parameters  ]---
+ ------------------------------------------
+  kBT = 0.616032 [Kcal/mol]
+  epsilon_soft = 0.616032 [Kcal/mol]
+  epsilon_LJ = 0.616032 [Kcal/mol]
+
+ PAIR_STYLE: pair_style hybrid lj/cut/omp 2.5 soft/omp 2.5
+WARNING: Using 'neigh_modify every 1 delay 0 check yes' setting during minimization (src/min.cpp:187)
+  generated 0 of 28 mixed pair_coeff terms from geometric mixing rule
+Hybrid pair style last /omp style soft/omp
+Last active /omp style is angle_style harmonic/omp
+Neighbor list info ...
+  update every 1 steps, delay 0 steps, check yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 300
+  ghost atom cutoff = 300
+  binsize = 150, bins = 16 16 16
+  3 neighbor lists, perpetual/occasional/extra = 3 0 0
+  (1) pair lj/cut/omp, perpetual, skip from (3)
+      attributes: half, newton on, omp
+      pair build: skip/omp
+      stencil: none
+      bin: none
+  (2) pair soft/omp, perpetual, skip from (3)
+      attributes: half, newton on, omp
+      pair build: skip/omp
+      stencil: none
+      bin: none
+  (3) neighbor class addition, perpetual
+      attributes: half, newton on, omp
+      pair build: half/bin/newton/omp
+      stencil: half/bin/3d
+      bin: standard
+Setting up cg style minimization ...
+  Unit style    : real
+  Current step  : 0
+Per MPI rank memory allocation (min/avg/max) = 26.15 | 26.15 | 26.15 Mbytes
+Step E_mol E_pair E_bond E_angle 
+       0    132830.51     158.3481     20366.91     112463.6 
+    5000    74338.572    85.519852    57.833005    74280.739 
+   10000    69487.402    85.854776    51.686081    69435.716 
+   10728    68855.656    84.361762    50.935651     68804.72 
+Loop time of 4.57871 on 8 procs for 10728 steps with 7612 atoms
+
+798.7% CPU use with 1 MPI tasks x 8 OpenMP threads
+
+Minimization stats:
+  Stopping criterion = energy tolerance
+  Energy initial, next-to-last, final = 
+      132988.855003576   68940.6417157114   68940.0178189277
+  Force two-norm initial, final = 126.80291 0.63086221
+  Force max component initial, final = 4.7444595 0.15849591
+  Final line search alpha, max atom move = 1 0.15849591
+  Iterations, force evaluations = 10728 10728
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0.51687    | 0.51687    | 0.51687    |   0.0 | 11.29
+Bond    | 1.2778     | 1.2778     | 1.2778     |   0.0 | 27.91
+Neigh   | 0.034693   | 0.034693   | 0.034693   |   0.0 |  0.76
+Comm    | 0.01298    | 0.01298    | 0.01298    |   0.0 |  0.28
+Output  | 2.9909e-05 | 2.9909e-05 | 2.9909e-05 |   0.0 |  0.00
+Modify  | 0.91046    | 0.91046    | 0.91046    |   0.0 | 19.88
+Other   |            | 1.826      |            |       | 39.88
+
+Nlocal:           7612 ave        7612 max        7612 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:              0 ave           0 max           0 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:              0 ave           0 max           0 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = -1
+Ave neighs/atom = -0.00013137152
+Ave special neighs/atom = 3.9411456
+Neighbor list builds = 11
+Dangerous builds = 0
+
+ -----------------------------------------------------
+ ---[ Twistable DNA (stiff), Energetic Parameters ]---
+ -----------------------------------------------------
+  kBT = 0.616032 [Kcal/mol]
+  k_stretch = 0.532899653979239 [Kcal/(mol*A^2)]
+  k_bend = 8.15336470588235 [Kcal/mol]
+  k_twist = 7.7004 [Kcal/mol]
+  k_align = 15.4008 [Kcal/mol]
+
+
+ -------------------------------------
+ ---[ Loops, Energetic Parameters ]---
+ -------------------------------------
+  kBT = 0.616032 [Kcal/mol]
+  k_loop = 0.201153306122449 [Kcal/(mol*A^2)]
+  r_loop = 68 [A]
+
+
+ ------------------------------------------
+ ---[Soft Pairs, Energetic Parameters  ]---
+ ------------------------------------------
+  kBT = 0.616032 [Kcal/mol]
+  epsilon_soft = 0.616032 [Kcal/mol]
+  epsilon_LJ = 0.616032 [Kcal/mol]
+
+ PAIR_STYLE: pair_style hybrid lj/cut/omp 2.5 soft/omp 2.5
+  generated 0 of 28 mixed pair_coeff terms from geometric mixing rule
+Hybrid pair style last /omp style soft/omp
+Last active /omp style is angle_style harmonic/omp
+Neighbor list info ...
+  update every 1 steps, delay 5 steps, check yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 300
+  ghost atom cutoff = 300
+  binsize = 150, bins = 16 16 16
+  3 neighbor lists, perpetual/occasional/extra = 3 0 0
+  (1) pair lj/cut/omp, perpetual, skip from (3)
+      attributes: half, newton on, omp
+      pair build: skip/omp
+      stencil: none
+      bin: none
+  (2) pair soft/omp, perpetual, skip from (3)
+      attributes: half, newton on, omp
+      pair build: skip/omp
+      stencil: none
+      bin: none
+  (3) neighbor class addition, perpetual
+      attributes: half, newton on, omp
+      pair build: half/bin/newton/omp
+      stencil: half/bin/3d
+      bin: standard
+Setting up Verlet run ...
+  Unit style    : real
+  Current step  : 0
+  Time step     : 100000
+Per MPI rank memory allocation (min/avg/max) = 26.52 | 26.52 | 26.52 Mbytes
+Step E_pair E_bond E_angle c_dnaMSD[4] c_ribosMSD[4] 
+       0    84.361762    50.935651     68804.72            0            0 
+    5000    91.165842    1584.4314    48471.522    16.282315    4.3691861 
+   10000    97.304829    1594.0386     39727.92    28.174986    9.4263616 
+Loop time of 3.81427 on 8 procs for 10000 steps with 7612 atoms
+
+Performance: 22651754.574 ns/day, 0.000 hours/ns, 2621.731 timesteps/s
+798.9% CPU use with 1 MPI tasks x 8 OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0.41281    | 0.41281    | 0.41281    |   0.0 | 10.82
+Bond    | 1.1641     | 1.1641     | 1.1641     |   0.0 | 30.52
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0.0017553  | 0.0017553  | 0.0017553  |   0.0 |  0.05
+Output  | 8.454e-05  | 8.454e-05  | 8.454e-05  |   0.0 |  0.00
+Modify  | 2.0653     | 2.0653     | 2.0653     |   0.0 | 54.15
+Other   |            | 0.1702     |            |       |  4.46
+
+Nlocal:           7612 ave        7612 max        7612 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:              0 ave           0 max           0 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:              0 ave           0 max           0 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = -1
+Ave neighs/atom = -0.00013137152
+Ave special neighs/atom = 3.9411456
+Neighbor list builds = 0
+Dangerous builds = 0
+
+ -----------------------------------------------------
+ ---[ Twistable DNA (stiff), Energetic Parameters ]---
+ -----------------------------------------------------
+  kBT = 0.616032 [Kcal/mol]
+  k_stretch = 0.532899653979239 [Kcal/(mol*A^2)]
+  k_bend = 8.15336470588235 [Kcal/mol]
+  k_twist = 7.7004 [Kcal/mol]
+  k_align = 15.4008 [Kcal/mol]
+
+
+ -------------------------------------
+ ---[ Loops, Energetic Parameters ]---
+ -------------------------------------
+  kBT = 0.616032 [Kcal/mol]
+  k_loop = 0.201153306122449 [Kcal/(mol*A^2)]
+  r_loop = 68 [A]
+
+
+ --------------------------------------------------
+ ---[LJ/cut (WCA) Pairs, Energetic Parameters  ]---
+ --------------------------------------------------
+  kBT = 0.616032 [Kcal/mol]
+  epsilon_LJ = 0.616032 [Kcal/mol]
+
+no extra potentials
+ PAIR_STYLE: pair_style lj/cut/omp 2.5
+WARNING: Using 'neigh_modify every 1 delay 0 check yes' setting during minimization (src/min.cpp:187)
+  generated 0 of 28 mixed pair_coeff terms from geometric mixing rule
+Last active /omp style is angle_style harmonic/omp
+Neighbor list info ...
+  update every 1 steps, delay 0 steps, check yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 324.49241
+  ghost atom cutoff = 324.49241
+  binsize = 162.2462, bins = 14 14 14
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair lj/cut/omp, perpetual
+      attributes: half, newton on, omp
+      pair build: half/bin/newton/omp
+      stencil: half/bin/3d
+      bin: standard
+Setting up cg style minimization ...
+  Unit style    : real
+  Current step  : 10000
+Per MPI rank memory allocation (min/avg/max) = 21.41 | 21.41 | 21.41 Mbytes
+Step E_mol E_pair E_bond E_angle 
+   10000    41321.959     91581733    1594.0386     39727.92 
+   11419    36330.262    78.575463    19.655124    36310.607 
+Loop time of 0.602846 on 8 procs for 1419 steps with 7612 atoms
+
+795.6% CPU use with 1 MPI tasks x 8 OpenMP threads
+
+Minimization stats:
+  Stopping criterion = energy tolerance
+  Energy initial, next-to-last, final = 
+       91623054.863265   36409.2012710987   36408.8374242977
+  Force two-norm initial, final = 99678777 0.86457155
+  Force max component initial, final = 43824430 0.13260346
+  Final line search alpha, max atom move = 0.94586347 0.12542477
+  Iterations, force evaluations = 1419 1419
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0.056699   | 0.056699   | 0.056699   |   0.0 |  9.41
+Bond    | 0.17126    | 0.17126    | 0.17126    |   0.0 | 28.41
+Neigh   | 0.0076278  | 0.0076278  | 0.0076278  |   0.0 |  1.27
+Comm    | 0.0018964  | 0.0018964  | 0.0018964  |   0.0 |  0.31
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0.12183    | 0.12183    | 0.12183    |   0.0 | 20.21
+Other   |            | 0.2435     |            |       | 40.40
+
+Nlocal:           7612 ave        7612 max        7612 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:              0 ave           0 max           0 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:          85840 ave       85840 max       85840 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 85840
+Ave neighs/atom = 11.276931
+Ave special neighs/atom = 3.9411456
+Neighbor list builds = 2
+Dangerous builds = 0
+
+ -----------------------------------------------------
+ ---[ Twistable DNA (stiff), Energetic Parameters ]---
+ -----------------------------------------------------
+  kBT = 0.616032 [Kcal/mol]
+  k_stretch = 0.532899653979239 [Kcal/(mol*A^2)]
+  k_bend = 8.15336470588235 [Kcal/mol]
+  k_twist = 7.7004 [Kcal/mol]
+  k_align = 15.4008 [Kcal/mol]
+
+
+ -------------------------------------
+ ---[ Loops, Energetic Parameters ]---
+ -------------------------------------
+  kBT = 0.616032 [Kcal/mol]
+  k_loop = 0.201153306122449 [Kcal/(mol*A^2)]
+  r_loop = 68 [A]
+
+
+ --------------------------------------------------
+ ---[LJ/cut (WCA) Pairs, Energetic Parameters  ]---
+ --------------------------------------------------
+  kBT = 0.616032 [Kcal/mol]
+  epsilon_LJ = 0.616032 [Kcal/mol]
+
+no extra potentials
+ PAIR_STYLE: pair_style lj/cut/omp 2.5
+  generated 0 of 28 mixed pair_coeff terms from geometric mixing rule
+Last active /omp style is angle_style harmonic/omp
+Setting up Verlet run ...
+  Unit style    : real
+  Current step  : 10000
+  Time step     : 100000
+Per MPI rank memory allocation (min/avg/max) = 19.91 | 19.91 | 19.91 Mbytes
+Step E_pair E_bond E_angle c_dnaMSD[4] c_ribosMSD[4] 
+   10000    78.575463    19.655124    36310.607            0            0 
+   15000    135.67359    1546.5625    32443.052    15.892801    5.4268289 
+   20000    132.07868     1572.982    29108.977    27.016096    9.7799909 
+Loop time of 3.71633 on 8 procs for 10000 steps with 7612 atoms
+
+Performance: 23248728.811 ns/day, 0.000 hours/ns, 2690.825 timesteps/s
+798.4% CPU use with 1 MPI tasks x 8 OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0.34726    | 0.34726    | 0.34726    |   0.0 |  9.34
+Bond    | 1.1832     | 1.1832     | 1.1832     |   0.0 | 31.84
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0.0018065  | 0.0018065  | 0.0018065  |   0.0 |  0.05
+Output  | 0.00011735 | 0.00011735 | 0.00011735 |   0.0 |  0.00
+Modify  | 2.0211     | 2.0211     | 2.0211     |   0.0 | 54.38
+Other   |            | 0.1629     |            |       |  4.38
+
+Nlocal:           7612 ave        7612 max        7612 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:              0 ave           0 max           0 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:          85840 ave       85840 max       85840 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 85840
+Ave neighs/atom = 11.276931
+Ave special neighs/atom = 3.9411456
+Neighbor list builds = 0
+Dangerous builds = 0
+
+ -----------------------------------------------------
+ ---[ Twistable DNA (FENE), Energetic Parameters  ]---
+ -----------------------------------------------------
+  kBT = 0.616032 [Kcal/mol]
+  k_stretch_FENE = 0.0532899653979239 [Kcal/(mol*A^2)]
+  R0_FENE = 51 [A]
+  epsilon_FENE = 0.616032 [Kcal/mol]
+  sigma_FENE = 34 [A]
+  k_bend = 8.15336470588235 [Kcal/mol]
+  k_twist = 7.7004 [Kcal/mol]
+  k_align = 15.4008 [Kcal/mol]
+
+
+ -------------------------------------
+ ---[ Loops, Energetic Parameters ]---
+ -------------------------------------
+  kBT = 0.616032 [Kcal/mol]
+  k_loop = 0.201153306122449 [Kcal/(mol*A^2)]
+  r_loop = 68 [A]
+
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:    0        1        1       
+  special bond factors coul:  0        1        1       
+     2 = max # of 1-2 neighbors
+     6 = max # of special neighbors
+  special bonds CPU = 0.002 seconds
+
+ --------------------------------------------------
+ ---[LJ/cut (WCA) Pairs, Energetic Parameters  ]---
+ --------------------------------------------------
+  kBT = 0.616032 [Kcal/mol]
+  epsilon_LJ = 0.616032 [Kcal/mol]
+
+no extra potentials
+ PAIR_STYLE: pair_style lj/cut/omp 2.5
+WARNING: Using 'neigh_modify every 1 delay 0 check yes' setting during minimization (src/min.cpp:187)
+  generated 0 of 28 mixed pair_coeff terms from geometric mixing rule
+Last active /omp style is angle_style harmonic/omp
+Setting up cg style minimization ...
+  Unit style    : real
+  Current step  : 20000
+Per MPI rank memory allocation (min/avg/max) = 21.48 | 21.48 | 21.48 Mbytes
+Step E_mol E_pair E_bond E_angle 
+   20000    250463.09     26385213    221354.11    29108.977 
+   20427    205169.95    98.678179    178180.32    26989.636 
+Loop time of 0.183389 on 8 procs for 427 steps with 7612 atoms
+
+795.4% CPU use with 1 MPI tasks x 8 OpenMP threads
+
+Minimization stats:
+  Stopping criterion = energy tolerance
+  Energy initial, next-to-last, final = 
+      26635675.7440354   205270.678660559    205268.63274183
+  Force two-norm initial, final = 43484316 2.2755439
+  Force max component initial, final = 20736284 0.16893794
+  Final line search alpha, max atom move = 0.28155669 0.047565606
+  Iterations, force evaluations = 427 427
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0.018227   | 0.018227   | 0.018227   |   0.0 |  9.94
+Bond    | 0.056643   | 0.056643   | 0.056643   |   0.0 | 30.89
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 6.488e-05  | 6.488e-05  | 6.488e-05  |   0.0 |  0.04
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0.035985   | 0.035985   | 0.035985   |   0.0 | 19.62
+Other   |            | 0.07247    |            |       | 39.52
+
+Nlocal:           7612 ave        7612 max        7612 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:              0 ave           0 max           0 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:          95812 ave       95812 max       95812 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 95812
+Ave neighs/atom = 12.586968
+Ave special neighs/atom = 1.3137152
+Neighbor list builds = 0
+Dangerous builds = 0
+
+COMMAND: simulator_run_hard_FENE
+	param_0: 50000
+	param_1: 1000
+	param_2: 5000
+	param_3: noappend
+	param_4: first
+
+
+
+ -----------------------------------------------------
+ ---[ Twistable DNA (FENE), Energetic Parameters  ]---
+ -----------------------------------------------------
+  kBT = 0.616032 [Kcal/mol]
+  k_stretch_FENE = 0.0532899653979239 [Kcal/(mol*A^2)]
+  R0_FENE = 51 [A]
+  epsilon_FENE = 0.616032 [Kcal/mol]
+  sigma_FENE = 34 [A]
+  k_bend = 8.15336470588235 [Kcal/mol]
+  k_twist = 7.7004 [Kcal/mol]
+  k_align = 15.4008 [Kcal/mol]
+
+
+ -------------------------------------
+ ---[ Loops, Energetic Parameters ]---
+ -------------------------------------
+  kBT = 0.616032 [Kcal/mol]
+  k_loop = 0.201153306122449 [Kcal/(mol*A^2)]
+  r_loop = 68 [A]
+
+
+ --------------------------------------------------
+ ---[LJ/cut (WCA) Pairs, Energetic Parameters  ]---
+ --------------------------------------------------
+  kBT = 0.616032 [Kcal/mol]
+  epsilon_LJ = 0.616032 [Kcal/mol]
+
+no extra potentials
+ PAIR_STYLE: pair_style lj/cut/omp 2.5
+  generated 0 of 28 mixed pair_coeff terms from geometric mixing rule
+Last active /omp style is angle_style harmonic/omp
+Setting up Verlet run ...
+  Unit style    : real
+  Current step  : 0
+  Time step     : 100000
+Per MPI rank memory allocation (min/avg/max) = 22.62 | 22.62 | 22.62 Mbytes
+Step E_pair E_bond E_angle c_dnaMSD[4] c_ribosMSD[4] 
+       0    98.678179    178180.32    26989.636            0            0 
+    1000    149.12508    179719.91    27240.645    4.5510418    1.1777976 
+    2000    167.47061    179689.93    27124.339    8.0139316     2.163016 
+    3000    159.27441    179765.63    26966.849     11.10064    3.4277679 
+    4000    156.82416     179755.8    26762.632    13.807688    4.8888138 
+    5000    170.53362    179729.58    26493.194    16.258516    5.3849931 
+    6000    176.54665    179716.36     26271.94    18.574177    6.0595354 
+    7000    157.90263    179744.45    26008.789    21.022739    6.6645427 
+    8000    162.91623    179726.88    25713.697    23.034331    7.6394359 
+    9000    168.97184     179760.2    25533.433    25.301424    8.8341052 
+   10000    169.07349     179736.2    25273.631    27.855918    9.4465698 
+   11000    171.78614    179739.71    25026.139    30.125624     11.16246 
+   12000    167.03533    179712.02    24845.589    32.378096    12.430518 
+   13000    170.39028    179717.13    24601.093    34.296862    12.214282 
+   14000    170.00003    179758.89    24276.858    36.011684    14.385659 
+   15000    143.21865    179665.66    24090.261    38.008741    15.624496 
+   16000    140.76228    179713.84    23879.303    40.579023    16.020871 
+   17000     139.2387     179698.3    23703.376    42.860062    17.962969 
+   18000    152.78408    179699.31    23491.156    44.835992    17.666273 
+   19000    155.15947    179754.73    23351.852    47.033597    18.521823 
+   20000    141.88274    179699.21    23176.538    48.717909    20.290554 
+   21000    150.55297     179752.5    22967.993    50.998512     21.33072 
+   22000    149.40205    179691.51    22805.673    52.747947    22.822711 
+   23000    145.62213    179693.47    22712.457    54.691819    23.752948 
+   24000    146.72543    179747.06    22549.199    56.892386    24.376238 
+   25000    147.44449    179683.85    22418.839    59.169412    24.039559 
+   26000    144.67267     179713.3    22288.689    61.494964    24.047144 
+   27000    144.07358    179713.27     22226.54    63.639187    24.311757 
+   28000    141.59446    179703.03    22103.724    65.445061    25.534961 
+   29000    140.84502    179719.27    21929.559     67.46198    24.999264 
+   30000    146.66693    179734.99    21801.204    70.128953    26.214278 
+   31000    132.52971    179693.71    21685.982     71.66417     27.36867 
+   32000    129.28022    179718.08    21532.752    73.794725    28.871886 
+   33000    138.46685    179732.68    21474.767    76.045416    29.328417 
+   34000    130.13897    179672.35    21391.954     77.97908     31.99541 
+   35000    131.93366    179726.72     21285.54    80.079459    33.489264 
+   36000    130.23642    179737.14    21248.033    82.413993    33.868209 
+   37000    143.19806    179729.45    21100.638    84.492344    33.641368 
+   38000     147.7263       179711    21035.748    86.357193     35.12176 
+   39000    144.29638    179743.05    20914.203    89.045588    37.053323 
+   40000    132.16998    179737.67    20761.093    91.607887    39.024195 
+   41000    135.79692    179726.61    20697.729    93.633853    42.964605 
+   42000    126.90611     179759.6    20680.389    95.953556     43.70504 
+   43000     126.9449    179717.46    20659.422    98.328225    43.779203 
+   44000    123.49647     179720.7    20609.061    100.61429    43.758547 
+   45000    135.99495     179710.7    20528.778    102.52789     43.76371 
+   46000    125.59071    179736.27     20405.62    105.09202    45.649157 
+   47000    127.10254    179707.85    20278.595    107.36552    46.912492 
+   48000    133.57794    179731.11    20310.228      110.078    49.922093 
+   49000    124.95526    179733.99    20255.645    112.42829    50.967892 
+   50000    125.63326    179705.94    20178.166    114.74543    54.020107 
+Loop time of 19.1786 on 8 procs for 50000 steps with 7612 atoms
+
+Performance: 22525123.306 ns/day, 0.000 hours/ns, 2607.074 timesteps/s
+794.7% CPU use with 1 MPI tasks x 8 OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 1.8515     | 1.8515     | 1.8515     |   0.0 |  9.65
+Bond    | 6.2595     | 6.2595     | 6.2595     |   0.0 | 32.64
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0.011257   | 0.011257   | 0.011257   |   0.0 |  0.06
+Output  | 0.15411    | 0.15411    | 0.15411    |   0.0 |  0.80
+Modify  | 10.087     | 10.087     | 10.087     |   0.0 | 52.59
+Other   |            | 0.8157     |            |       |  4.25
+
+Nlocal:           7612 ave        7612 max        7612 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:              0 ave           0 max           0 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:          93753 ave       93753 max       93753 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 93753
+Ave neighs/atom = 12.316474
+Ave special neighs/atom = 1.3137152
+Neighbor list builds = 0
+Dangerous builds = 0
+---END EXECUTING COMMANDS---
+
+Total wall time: 0:00:32
